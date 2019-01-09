@@ -1,0 +1,31 @@
+{
+    "name": "niugengyun/easytbk",
+    "type": "library",
+    "description": "no description",
+    "keywords": ["sdk"],
+    "homepage": "https://github.com/niugengyun/easytbk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "niugengyun",
+            "email": "515343908@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0|~5.1|~5.2|~5.3|~5.4|~5.5|~5.6|~5.7",
+        "graham-campbell/manager": "^2.0|^3.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NiuGengYun\\EasyTBK\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NiuGengYun\\EasyTBK\\ServiceProvider"
+            ]
+        }
+    }
+}
