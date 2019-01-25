@@ -72,7 +72,7 @@ class Application
      * @param $request
      * @return mixed
      */
-    public function excute($request, $access_token = null)
+    public function execute($request, $access_token = null)
     {
         $timestamp = date ('Y-m-d H:i:s');
 
