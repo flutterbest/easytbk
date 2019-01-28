@@ -170,7 +170,6 @@ class JdUnionPositionCreateRequest implements RequestInterface
             'unionType' => $this->unionType,
             'siteId' => $this->siteId,
             'unionId' => $this->unionId,
-            'pageSize' => $this->pageSize,
             'unionId' => $this->unionId,
             'type' => $this->type,
             'key' => $this->key,
