@@ -1,5 +1,10 @@
-/vendor
+vendor
 composer.phar
 composer.lock
 test.php
-/.idea
+.idea
+.vscode
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
