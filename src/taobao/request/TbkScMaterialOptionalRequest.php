@@ -1,53 +1,73 @@
 <?php
-
 namespace NiuGengYun\EasyTBK\TaoBao\Request;
 
 use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+
 /**
  * TOP API: taobao.tbk.sc.material.optional request
  *
  * @author auto create
- * @since 1.0, 2018.05.24
+ * @since 1.0, 2019.02.20
  */
 class TbkScMaterialOptionalRequest
 {
     /**
-     * adzone_id
+     * mm_xxx_xxx_12345678三段式的最后一段数字
      **/
     private $adzoneId;
 
     /**
-     * 后台类目ID，用,分割，最大10个，该ID可以通过taobao.itemcats.get接口获取到
+     * 商品筛选-后台类目ID。用,分割，最大10个，该ID可以通过taobao.itemcats.get接口获取到
      **/
     private $cat;
 
     /**
-     * 折扣价范围上限，单位：元
+     * 智能匹配-设备号加密类型：MD5
+     **/
+    private $deviceEncrypt;
+
+    /**
+     * 智能匹配-设备号类型：IMEI，或者IDFA，或者UTDID（UTDID不支持MD5加密）
+     **/
+    private $deviceType;
+
+    /**
+     * 智能匹配-设备号加密后的值（MD5加密需32位小写）
+     **/
+    private $deviceValue;
+
+    /**
+     * 商品筛选-KA媒体淘客佣金比率上限。如：1234表示12.34%
+     **/
+    private $endKaTkRate;
+
+    /**
+     * 商品筛选-折扣价范围上限。单位：元
      **/
     private $endPrice;
 
     /**
-     * 淘客佣金比率上限，如：1234表示12.34%
+     * 商品筛选-淘客佣金比率上限。如：1234表示12.34%
      **/
     private $endTkRate;
 
     /**
-     * 是否有优惠券，设置为true表示该商品有优惠券，设置为false或不设置表示不判断这个属性
+     * 优惠券筛选-是否有优惠券。true表示该商品有优惠券，false或不设置表示不限
      **/
     private $hasCoupon;
 
     /**
-     * 好评率是否高于行业均值
+     * 商品筛选-好评率是否高于行业均值。True表示大于等于，false或不设置表示不限
      **/
     private $includeGoodRate;
 
     /**
-     * 成交转化是否高于行业均值
+     * 商品筛选(特定媒体支持)-成交转化是否高于行业均值。True表示大于等于，false或不设置表示不限
      **/
     private $includePayRate30;
 
     /**
-     * 退款率是否低于行业均值
+     * 商品筛选(特定媒体支持)-退款率是否低于行业均值。True表示大于等于，false或不设置表示不限
      **/
     private $includeRfdRate;
 
@@ -57,32 +77,37 @@ class TbkScMaterialOptionalRequest
     private $ip;
 
     /**
-     * 是否海外商品，设置为true表示该商品是属于海外商品，设置为false或不设置表示不判断这个属性
+     * 商品筛选-是否海外商品。true表示属于海外商品，false或不设置表示不限
      **/
     private $isOverseas;
 
     /**
-     * 是否商城商品，设置为true表示该商品是属于淘宝商城商品，设置为false或不设置表示不判断这个属性
+     * 商品筛选-是否天猫商品。true表示属于天猫商品，false或不设置表示不限
      **/
     private $isTmall;
 
     /**
-     * 所在地
+     * 商品筛选-所在地
      **/
     private $itemloc;
 
     /**
-     * 是否包邮，true表示包邮，空或false表示不限
+     * 物料id(详细物料id见：https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8576096)。不传时默认为2836
+     **/
+    private $materialId;
+
+    /**
+     * 商品筛选-是否包邮。true表示包邮，false或不设置表示不限
      **/
     private $needFreeShipment;
 
     /**
-     * 是否加入消费者保障，true表示加入，空或false表示不限
+     * 商品筛选-是否加入消费者保障。true表示加入，false或不设置表示不限
      **/
     private $needPrepay;
 
     /**
-     * 牛皮癣程度，取值：1:不限，2:无，3:轻微
+     * 商品筛选-牛皮癣程度。取值：1不限，2无，3轻微
      **/
     private $npxLevel;
 
@@ -102,15 +127,14 @@ class TbkScMaterialOptionalRequest
     private $platform;
 
     /**
-     * 查询词
+     * 查询的关键词
      **/
     private $q;
 
     /**
-     * site_id
+     * mm_xxx_22_xxx三段式的第二段数字
      **/
     private $siteId;
-    private $MaterialId;
 
     /**
      * 排序_des（降序），排序_asc（升序），销量（total_sales），淘客佣金比率（tk_rate）， 累计推广量（tk_total_sales），总支出佣金（tk_total_commi），价格（price）
@@ -118,17 +142,22 @@ class TbkScMaterialOptionalRequest
     private $sort;
 
     /**
-     * 店铺dsr评分，筛选高于等于当前设置的店铺dsr评分的商品0-50000之间
+     * 商品筛选(特定媒体支持)-店铺dsr评分。筛选大于等于当前设置的店铺dsr评分的商品0-50000之间
      **/
     private $startDsr;
 
     /**
-     * 折扣价范围下限，单位：元
+     * 商品筛选-KA媒体淘客佣金比率下限。如：1234表示12.34%
+     **/
+    private $startKaTkRate;
+
+    /**
+     * 商品筛选-折扣价范围上限。单位：元
      **/
     private $startPrice;
 
     /**
-     * 淘客佣金比率下限，如：1234表示12.34%
+     * 商品筛选-淘客佣金比率下限。如：1234表示12.34%
      **/
     private $startTkRate;
 
@@ -154,6 +183,50 @@ class TbkScMaterialOptionalRequest
     public function getCat()
     {
         return $this->cat;
+    }
+
+    public function setDeviceEncrypt($deviceEncrypt)
+    {
+        $this->deviceEncrypt = $deviceEncrypt;
+        $this->apiParas["device_encrypt"] = $deviceEncrypt;
+    }
+
+    public function getDeviceEncrypt()
+    {
+        return $this->deviceEncrypt;
+    }
+
+    public function setDeviceType($deviceType)
+    {
+        $this->deviceType = $deviceType;
+        $this->apiParas["device_type"] = $deviceType;
+    }
+
+    public function getDeviceType()
+    {
+        return $this->deviceType;
+    }
+
+    public function setDeviceValue($deviceValue)
+    {
+        $this->deviceValue = $deviceValue;
+        $this->apiParas["device_value"] = $deviceValue;
+    }
+
+    public function getDeviceValue()
+    {
+        return $this->deviceValue;
+    }
+
+    public function setEndKaTkRate($endKaTkRate)
+    {
+        $this->endKaTkRate = $endKaTkRate;
+        $this->apiParas["end_ka_tk_rate"] = $endKaTkRate;
+    }
+
+    public function getEndKaTkRate()
+    {
+        return $this->endKaTkRate;
     }
 
     public function setEndPrice($endPrice)
@@ -266,6 +339,17 @@ class TbkScMaterialOptionalRequest
         return $this->itemloc;
     }
 
+    public function setMaterialId($materialId)
+    {
+        $this->materialId = $materialId;
+        $this->apiParas["material_id"] = $materialId;
+    }
+
+    public function getMaterialId()
+    {
+        return $this->materialId;
+    }
+
     public function setNeedFreeShipment($needFreeShipment)
     {
         $this->needFreeShipment = $needFreeShipment;
@@ -354,19 +438,6 @@ class TbkScMaterialOptionalRequest
         return $this->siteId;
     }
 
-
-    public function setMaterialId($MaterialId)
-    {
-        $this->MaterialId = $MaterialId;
-        $this->apiParas["material_id"] = $MaterialId;
-    }
-
-    public function getMaterialId()
-    {
-        return $this->MaterialId;
-    }
-
-
     public function setSort($sort)
     {
         $this->sort = $sort;
@@ -387,6 +458,17 @@ class TbkScMaterialOptionalRequest
     public function getStartDsr()
     {
         return $this->startDsr;
+    }
+
+    public function setStartKaTkRate($startKaTkRate)
+    {
+        $this->startKaTkRate = $startKaTkRate;
+        $this->apiParas["start_ka_tk_rate"] = $startKaTkRate;
+    }
+
+    public function getStartKaTkRate()
+    {
+        return $this->startKaTkRate;
     }
 
     public function setStartPrice($startPrice)
@@ -424,13 +506,12 @@ class TbkScMaterialOptionalRequest
     public function check()
     {
 
-        RequestCheckUtil::checkNotNull ($this->adzoneId, "adzoneId");
-        RequestCheckUtil::checkNotNull ($this->siteId, "siteId");
-        RequestCheckUtil::checkMaxValue ($this->startDsr, 50000, "startDsr");
+        RequestCheckUtil::checkNotNull($this->adzoneId,"adzoneId");
+        RequestCheckUtil::checkNotNull($this->siteId,"siteId");
+        RequestCheckUtil::checkMaxValue($this->startDsr,50000,"startDsr");
     }
 
-    public function putOtherTextParam($key, $value)
-    {
+    public function putOtherTextParam($key, $value) {
         $this->apiParas[$key] = $value;
         $this->$key = $value;
     }
