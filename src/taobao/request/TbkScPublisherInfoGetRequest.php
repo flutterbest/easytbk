@@ -1,4 +1,5 @@
 <?php
+
 namespace NiuGengYun\EasyTBK\TaoBao\Request;
 
 use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
@@ -6,12 +7,12 @@ use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
  * TOP API: taobao.tbk.sc.publisher.info.get request
  * 
  * @author auto create
- * @since 1.0, 2018.06.25
+ * @since 1.0, 2019.04.19
  */
 class TbkScPublisherInfoGetRequest
 {
 	/** 
-	 * 类型，必选 1:渠道备案
+	 * 类型，必选 1:渠道信息；2:会员信息
 	 **/
 	private $infoType;
 	
@@ -26,14 +27,19 @@ class TbkScPublisherInfoGetRequest
 	private $pageSize;
 	
 	/** 
-	 * 渠道推广的物料类型
+	 * 备案的场景：common（通用备案），etao（一淘备案），minietao（一淘小程序备案），offlineShop（线下门店备案），offlinePerson（线下个人备案）。如不填默认common。查询会员信息只需填写common即可
 	 **/
 	private $relationApp;
 	
 	/** 
-	 * 渠道备案 - 渠道关系ID
+	 * 渠道独占 - 渠道关系ID
 	 **/
 	private $relationId;
+	
+	/** 
+	 * 会员独占 - 会员运营ID
+	 **/
+	private $specialId;
 	
 	private $apiParas = array();
 	
@@ -90,6 +96,17 @@ class TbkScPublisherInfoGetRequest
 	public function getRelationId()
 	{
 		return $this->relationId;
+	}
+
+	public function setSpecialId($specialId)
+	{
+		$this->specialId = $specialId;
+		$this->apiParas["special_id"] = $specialId;
+	}
+
+	public function getSpecialId()
+	{
+		return $this->specialId;
 	}
 
 	public function getApiMethodName()

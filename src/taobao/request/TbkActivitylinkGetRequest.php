@@ -4,15 +4,15 @@ namespace NiuGengYun\EasyTBK\TaoBao\Request;
 
 use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
 /**
- * TOP API: taobao.tbk.sc.activitylink.toolget request
+ * TOP API: taobao.tbk.activitylink.get request
  * 
  * @author auto create
  * @since 1.0, 2019.05.16
  */
-class TbkScActivitylinkToolgetRequest
+class TbkActivitylinkGetRequest
 {
 	/** 
-	 * 推广位id，mm_xx_xx_xx pid三段式中的第三段
+	 * 推广位id，mm_xx_xx_xx pid三段式中的第三段。adzone_id需属于appKey拥有者
 	 **/
 	private $adzoneId;
 	
@@ -32,9 +32,9 @@ class TbkScActivitylinkToolgetRequest
 	private $relationId;
 	
 	/** 
-	 * 推广位id，mm_xx_xx_xx pid三段式中的第二段
+	 * 媒体平台下达人的淘客pid
 	 **/
-	private $siteId;
+	private $subPid;
 	
 	/** 
 	 * 自定义输入串，英文和数字组成，长度不能大于12个字符，区分不同的推广渠道
@@ -87,15 +87,15 @@ class TbkScActivitylinkToolgetRequest
 		return $this->relationId;
 	}
 
-	public function setSiteId($siteId)
+	public function setSubPid($subPid)
 	{
-		$this->siteId = $siteId;
-		$this->apiParas["site_id"] = $siteId;
+		$this->subPid = $subPid;
+		$this->apiParas["sub_pid"] = $subPid;
 	}
 
-	public function getSiteId()
+	public function getSubPid()
 	{
-		return $this->siteId;
+		return $this->subPid;
 	}
 
 	public function setUnionId($unionId)
@@ -111,7 +111,7 @@ class TbkScActivitylinkToolgetRequest
 
 	public function getApiMethodName()
 	{
-		return "taobao.tbk.sc.activitylink.toolget";
+		return "taobao.tbk.activitylink.get";
 	}
 	
 	public function getApiParas()
@@ -124,7 +124,6 @@ class TbkScActivitylinkToolgetRequest
 		
 		RequestCheckUtil::checkNotNull($this->adzoneId,"adzoneId");
 		RequestCheckUtil::checkNotNull($this->promotionSceneId,"promotionSceneId");
-		RequestCheckUtil::checkNotNull($this->siteId,"siteId");
 	}
 	
 	public function putOtherTextParam($key, $value) {

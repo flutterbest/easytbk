@@ -1,4 +1,5 @@
 <?php
+
 namespace NiuGengYun\EasyTBK\TaoBao\Request;
 
 use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
@@ -6,12 +7,12 @@ use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
  * TOP API: taobao.tbk.sc.publisher.info.save request
  * 
  * @author auto create
- * @since 1.0, 2018.06.28
+ * @since 1.0, 2018.12.14
  */
 class TbkScPublisherInfoSaveRequest
 {
 	/** 
-	 * 类型，必选 1:渠道备案
+	 * 类型，必选 默认为1:
 	 **/
 	private $infoType;
 	

@@ -10,9 +10,39 @@ class NTbkItem
 {
 	
 	/** 
+	 * 叶子类目名称
+	 **/
+	public $cat_leaf_name;
+	
+	/** 
+	 * 一级类目名称
+	 **/
+	public $cat_name;
+	
+	/** 
 	 * 淘客地址
 	 **/
 	public $click_url;
+	
+	/** 
+	 * 佣金比例
+	 **/
+	public $commission_rate;
+	
+	/** 
+	 * couponAmount
+	 **/
+	public $coupon_amount;
+	
+	/** 
+	 * 优惠券额度
+	 **/
+	public $coupon_price;
+	
+	/** 
+	 * 优惠券使用门槛金额
+	 **/
+	public $coupon_start_fee;
 	
 	/** 
 	 * 商品地址

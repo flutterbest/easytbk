@@ -4,19 +4,34 @@ namespace NiuGengYun\EasyTBK\TaoBao\Request;
 
 use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
 /**
- * TOP API: taobao.time.get request
+ * TOP API: taobao.tbk.content.effect.get request
  * 
  * @author auto create
  * @since 1.0, 2018.07.25
  */
-class TimeGetRequest
+class TbkContentEffectGetRequest
 {
+	/** 
+	 * 入参
+	 **/
+	private $option;
 	
 	private $apiParas = array();
 	
+	public function setOption($option)
+	{
+		$this->option = $option;
+		$this->apiParas["option"] = $option;
+	}
+
+	public function getOption()
+	{
+		return $this->option;
+	}
+
 	public function getApiMethodName()
 	{
-		return "taobao.time.get";
+		return "taobao.tbk.content.effect.get";
 	}
 	
 	public function getApiParas()

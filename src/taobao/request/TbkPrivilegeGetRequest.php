@@ -1,8 +1,8 @@
 <?php
+
 namespace NiuGengYun\EasyTBK\TaoBao\Request;
 
 use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
-
 /**
  * TOP API: taobao.tbk.privilege.get request
  * 

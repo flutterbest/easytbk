@@ -3,15 +3,15 @@
 namespace NiuGengYun\EasyTBK\TaoBao\Domain;
 
 /**
- * data
+ * model
  * @author auto create
  */
-class Data
+class ContentEffectPageDto
 {
 	
 	/** 
-	 * 邀请码
+	 * contentEffectList
 	 **/
-	public $inviter_code;	
+	public $content_effect_list;	
 }
 ?>
