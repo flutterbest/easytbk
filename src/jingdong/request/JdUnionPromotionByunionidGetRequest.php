@@ -18,7 +18,12 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
      */
     private $method = 'jd.union.open.promotion.byunionid.get';
 
-
+    /**
+     * 子联盟ID（需要联系运营开通权限才能拿到数据）
+     * @var 
+     */
+    private $subUnionId;
+    
     /**
      * 推广物料链接，建议链接使用微Q前缀，能较好适配微信手Q页面
      * @var
@@ -49,6 +54,23 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
      */
     private $couponUrl;
 
+    /**
+     * @return mixed
+     */
+    public function getSubUnionId()
+    {
+        return $this->subUnionId;
+    }
+
+    /**
+     * @param mixed $subUnionId
+     */
+    public function setSubUnionId($subUnionId): void
+    {
+        $this->subUnionId = $subUnionId;
+    }
+    
+    
     /**
      * @return mixed
      */
