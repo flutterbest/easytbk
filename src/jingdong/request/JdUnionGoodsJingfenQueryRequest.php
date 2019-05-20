@@ -52,6 +52,86 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
     /**
      * @return mixed
      */
+    public function getSort()
+    {
+        return $this->sort;
+    }
+
+    /**
+     * @param mixed $sort
+     */
+    public function setSort($sort): void
+    {
+        $this->sort = $sort;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPageSize()
+    {
+        return $this->pageSize;
+    }
+
+    /**
+     * @param mixed $pageSize
+     */
+    public function setPageSize($pageSize): void
+    {
+        $this->pageSize = $pageSize;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEliteId()
+    {
+        return $this->eliteId;
+    }
+
+    /**
+     * @param mixed $eliteId
+     */
+    public function setEliteId($eliteId): void
+    {
+        $this->eliteId = $eliteId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSortName()
+    {
+        return $this->sortName;
+    }
+
+    /**
+     * @param mixed $sortName
+     */
+    public function setSortName($sortName): void
+    {
+        $this->sortName = $sortName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPageIndex()
+    {
+        return $this->pageIndex;
+    }
+
+    /**
+     * @param mixed $pageIndex
+     */
+    public function setPageIndex($pageIndex): void
+    {
+        $this->pageIndex = $pageIndex;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getParamJson()
     {
         $params = [
