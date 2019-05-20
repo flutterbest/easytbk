@@ -2,6 +2,7 @@
 
 namespace NiuGengYun\EasyTBK;
 
+use function GuzzleHttp\Psr7\str;
 use NiuGengYun\EasyTBK\TaoBao\Application as TaoBao;
 use NiuGengYun\EasyTBK\PinDuoDuo\Application as PinDuoDuo;
 use NiuGengYun\EasyTBK\JingDong\Application as JingDong;
@@ -91,6 +92,7 @@ class Factory
             if (!array_key_exists ('app_key', $config) || !array_key_exists ('app_secret', $config)) {
                 throw new \InvalidArgumentException('The top client requires api keys.');
             }
+            $config['app_key'] = (string) $config['app_key'];
             return array_only ($config, ['app_key', 'app_secret', 'format']);
         }
         if ($name == "pinduoduo") {
@@ -119,7 +121,7 @@ class Factory
     {
         if ($name == "taobao") {
             $c = new TaoBao;
-            $c->appkey = $config['app_key'];
+            $c->appkey = (string) $config['app_key'];
             $c->secretKey = $config['app_secret'];
             $c->format = isset($config['format']) ? $config['format'] : 'json';
             return $c;
