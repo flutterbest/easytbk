@@ -224,8 +224,10 @@ class Application
 		$apiParams = array();
 		//获取业务参数
 		$apiParams = $request->getApiParas();
-
-
+        //过滤为空的参数
+        $apiParams = array_filter ($apiParams, function ($val) {
+                return $val != null;
+         });
 		//系统参数放入GET请求串
 		if($bestUrl){
 			$requestUrl = $bestUrl."?";
