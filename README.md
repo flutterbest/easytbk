@@ -5,12 +5,16 @@
 # 使用方法
 1、安装扩展包
 
-`composer require niugengyun/easytbk`
+```bash
+composer require niugengyun/easytbk
+```
 
 
 2、执行下面的命令，然后修改config/easytbk.php
 
-`php artisan vendor:publish --provider "NiuGengYun\EasyTBK\ServiceProvider"`
+```bash
+php artisan vendor:publish --provider "NiuGengYun\EasyTBK\ServiceProvider"
+```
 
 3、淘宝SDK初始化
 
