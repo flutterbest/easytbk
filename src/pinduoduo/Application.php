@@ -91,7 +91,7 @@ class Application
      * @param $request
      * @return mixed
      */
-    public function excute($request, $access_token = '')
+    public function execute($request, $access_token = '')
     {
         $baseParams = [
             'client_id' => $this->clientId,
