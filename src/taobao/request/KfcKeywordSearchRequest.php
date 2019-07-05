@@ -5,7 +5,7 @@ namespace NiuGengYun\EasyTBK\TaoBao\Request;
 use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
 /**
  * TOP API: taobao.kfc.keyword.search request
- * 
+ *
  * @author auto create
  * @since 1.0, 2018.07.26
  */
@@ -19,71 +19,72 @@ class KfcKeywordSearchRequest
      *
      * 通常apply参数是不需要传递的。如有特殊需求（比如特殊的过滤需求，需要自己维护一套自己词库），需传递此参数。
      **/
-	private $apply;
-	
-	/** 
-	 * 需要过滤的文本信息
-	 **/
-	private $content;
-	
-	/** 
-	 * 发布信息的淘宝会员名，可以不传
-	 **/
-	private $nick;
-	
-	private $apiParas = array();
-	
-	public function setApply($apply)
-	{
-		$this->apply = $apply;
-		$this->apiParas["apply"] = $apply;
-	}
+    private $apply;
 
-	public function getApply()
-	{
-		return $this->apply;
-	}
+    /**
+     * 需要过滤的文本信息
+     **/
+    private $content;
 
-	public function setContent($content)
-	{
-		$this->content = $content;
-		$this->apiParas["content"] = $content;
-	}
+    /**
+     * 发布信息的淘宝会员名，可以不传
+     **/
+    private $nick;
 
-	public function getContent()
-	{
-		return $this->content;
-	}
+    private $apiParas = array();
 
-	public function setNick($nick)
-	{
-		$this->nick = $nick;
-		$this->apiParas["nick"] = $nick;
-	}
+    public function setApply($apply)
+    {
+        $this->apply = $apply;
+        $this->apiParas["apply"] = $apply;
+    }
 
-	public function getNick()
-	{
-		return $this->nick;
-	}
+    public function getApply()
+    {
+        return $this->apply;
+    }
 
-	public function getApiMethodName()
-	{
-		return "taobao.kfc.keyword.search";
-	}
-	
-	public function getApiParas()
-	{
-		return $this->apiParas;
-	}
-	
-	public function check()
-	{
-		
-		RequestCheckUtil::checkNotNull($this->content,"content");
-	}
-	
-	public function putOtherTextParam($key, $value) {
-		$this->apiParas[$key] = $value;
-		$this->$key = $value;
-	}
+    public function setContent($content)
+    {
+        $this->content = $content;
+        $this->apiParas["content"] = $content;
+    }
+
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function setNick($nick)
+    {
+        $this->nick = $nick;
+        $this->apiParas["nick"] = $nick;
+    }
+
+    public function getNick()
+    {
+        return $this->nick;
+    }
+
+    public function getApiMethodName()
+    {
+        return "taobao.kfc.keyword.search";
+    }
+
+    public function getApiParas()
+    {
+        return $this->apiParas;
+    }
+
+    public function check()
+    {
+
+        RequestCheckUtil::checkNotNull ($this->content, "content");
+    }
+
+    public function putOtherTextParam($key, $value)
+    {
+        $this->apiParas[$key] = $value;
+        $this->$key = $value;
+    }
 }

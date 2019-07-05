@@ -7,7 +7,7 @@ use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
  * TOP API: taobao.tbk.activitylink.get request
  * 
  * @author auto create
- * @since 1.0, 2019.05.16
+ * @since 1.0, 2019.07.03
  */
 class TbkActivitylinkGetRequest
 {
