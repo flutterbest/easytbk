@@ -1,5 +1,4 @@
 <?php
-
 namespace NiuGengYun\EasyTBK\TaoBao\Request;
 
 use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
@@ -7,12 +6,12 @@ use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
  * TOP API: taobao.tbk.sc.invitecode.get request
  * 
  * @author auto create
- * @since 1.0, 2018.08.28
+ * @since 1.0, 2018.06.13
  */
 class TbkScInvitecodeGetRequest
 {
 	/** 
-	 * 邀请码类型，1 - 渠道邀请，2 - 渠道裂变，3 -会员邀请
+	 * 邀请码类型，1 - 渠道邀请，2 - 渠道裂变
 	 **/
 	private $codeType;
 	
