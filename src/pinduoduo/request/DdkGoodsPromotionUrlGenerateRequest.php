@@ -180,7 +180,7 @@ class DdkGoodsPromotionUrlGenerateRequest implements  RequestInterface
             'generate_weapp_webview' => $this->generateWeappWebview,
             'zs_duo_id'              => $this->zsduoId,
             'generate_we_app'        => $this->generateWeApp,
-            'generate_schema_url'    => true
+            'generate_schema_url'    => "true"
         ];
         return array_filter($params);
     }
