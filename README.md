@@ -1,6 +1,6 @@
 # 介绍
 
-淘宝联盟、京东联盟、多多进宝SDK封装，有bug或者新增api请提交PR
+淘宝联盟、京东联盟、多多进宝SDK封装，该项目长期维护
 
 # 联系方式
 微信：bugfixed
@@ -33,4 +33,4 @@ $req->setNumIids ($numIids);
 return $client->execute ($req);
 ```
 
-4、京东、拼多多SDK初始化基本一样，自己摸索
+4、京东、拼多多SDK初始化基本一样
