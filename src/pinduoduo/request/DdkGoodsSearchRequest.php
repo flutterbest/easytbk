@@ -1,10 +1,11 @@
 <?php
+
 namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
 
 use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
 
 
-class DdkGoodsSearchRequest implements  RequestInterface
+class DdkGoodsSearchRequest implements RequestInterface
 {
     /**
      * 多多进宝商品查询
@@ -55,22 +56,53 @@ class DdkGoodsSearchRequest implements  RequestInterface
     private $rangeList;
 
     /**
+     * 商品类目ID，使用pdd.goods.cats.get接口获取
+     * @var
+     */
+    private $catId;
+
+
+    /**
      * 商品ID列表。例如：[123456,123]，当入参带有goods_id_list字段，将不会以opt_id、 cat_id、keyword维度筛选商品
      * @var
      */
     private $goodsIdList;
 
     /**
-     * 招商多多客ID
-     * @var
-     */
-    private $zsduoId;
-
-    /**
      * 店铺类型，1-个人，2-企业，3-旗舰店，4-专卖店，5-专营店，6-普通店（未传为全部）
      * @var
      */
     private $merchantType;
+
+    /**
+     * 推广位id
+     * @var
+     */
+    private $pid;
+
+    /**
+     * 自定义参数
+     * @var
+     */
+    private $customParameters;
+
+    /**
+     * 店铺类型数组
+     * @var
+     */
+    private $merchantTypeList;
+
+    /**
+     * 是否为品牌商品
+     * @var
+     */
+    private $isBrandGoods;
+
+    /**
+     *商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
+     * @var
+     */
+    private $activityTags;
 
     public function setType($type)
     {
@@ -147,6 +179,11 @@ class DdkGoodsSearchRequest implements  RequestInterface
         $this->rangeList = $rangeList;
     }
 
+    public function setCatId($catID)
+    {
+        $this->catId = $catID;
+    }
+
     public function getRangeList()
     {
         return $this->rangeList;
@@ -162,15 +199,6 @@ class DdkGoodsSearchRequest implements  RequestInterface
         return $this->goodsIdList;
     }
 
-    public function setZsduoId($zsduoId)
-    {
-        $this->zsduoId = $zsduoId;
-    }
-
-    public function getZsduoId()
-    {
-        return $this->zsduoId;
-    }
 
     public function setMerchantType($merchantType)
     {
@@ -182,20 +210,106 @@ class DdkGoodsSearchRequest implements  RequestInterface
         return $this->merchantType;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPid()
+    {
+        return $this->pid;
+    }
+
+    /**
+     * @param mixed $pid
+     */
+    public function setPid($pid): void
+    {
+        $this->pid = $pid;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCustomParameters()
+    {
+        return $this->customParameters;
+    }
+
+    /**
+     * @param mixed $customParameters
+     */
+    public function setCustomParameters($customParameters)
+    {
+        $this->customParameters = $customParameters;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantTypeList()
+    {
+        return $this->merchantTypeList;
+    }
+
+    /**
+     * @param mixed $merchantTypeList
+     */
+    public function setMerchantTypeList($merchantTypeList)
+    {
+        $this->merchantTypeList = $merchantTypeList;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsBrandGoods()
+    {
+        return $this->isBrandGoods;
+    }
+
+    /**
+     * @param mixed $isBrandGoods
+     */
+    public function setIsBrandGoods($isBrandGoods)
+    {
+        $this->isBrandGoods = $isBrandGoods;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActivityTags()
+    {
+        return $this->activityTags;
+    }
+
+    /**
+     * @param mixed $activityTags
+     */
+    public function setActivityTags($activityTags)
+    {
+        $this->activityTags = $activityTags;
+    }
+
+
     public function getParams()
     {
         $params = [
-            'type'          => $this->type,
-            'keyword'       => $this->keyword,
-            'opt_id'        => $this->optId,
-            'page'          => $this->page,
-            'page_size'     => $this->pageSize,
-            'sort_type'     => $this->sortType,
-            'with_coupon'   => $this->withCoupon,
-            'range_list'    => $this->rangeList,
+            'type' => $this->type,
+            'keyword' => $this->keyword,
+            'opt_id' => $this->optId,
+            'page' => $this->page,
+            'page_size' => $this->pageSize,
+            'sort_type' => $this->sortType,
+            'with_coupon' => $this->withCoupon,
+            'range_list' => $this->rangeList,
+            'cat_id' => $this->catId,
             'goods_id_list' => $this->goodsIdList,
-            'zs_duo_id'     => $this->zsduoId,
             'merchant_type' => $this->merchantType,
+            'pid' => $this->pid,
+            'custom_parameters' => $this->customParameters,
+            'merchant_type_list' => $this->merchantTypeList,
+            'is_brand_goods' => $this->isBrandGoods,
+            'activity_tags' => $this->activityTags,
         ];
 
         return array_filter($params);
