@@ -35,4 +35,27 @@ $req->setNumIids ($numIids);
 return $client->execute ($req);
 ```
 
-4、京东、拼多多SDK初始化基本一样
+4、京东SDK初始化
+```php
+<?php
+use NiuGengYun\EasyTBK\Factory;
+use NiuGengYun\EasyTBK\JingDong\Request\JdUnionGoodsPromotiongoodsinfoQueryRequest;
+
+$jd = Factory::jingdong();
+$req = new JdUnionGoodsPromotiongoodsinfoQueryRequest();
+$req->setSkuIds("$itemid");
+return $jd->execute($req);
+```
+
+
+5、拼多多SDK初始化
+```php
+<?php
+use NiuGengYun\EasyTBK\Factory;
+use NiuGengYun\EasyTBK\PinDuoDuo\Request\DdkGoodsDetailRequest;
+
+$pdd = Factory::pinduoduo();
+$req = new DdkGoodsDetailRequest();
+$req->setGoodsIdList("[$itemid]");
+return  $pdd->execute($req);
+```
