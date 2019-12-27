@@ -20,10 +20,10 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
 
     /**
      * 子联盟ID（需要联系运营开通权限才能拿到数据）
-     * @var 
+     * @var
      */
     private $subUnionId;
-    
+
     /**
      * 推广物料链接，建议链接使用微Q前缀，能较好适配微信手Q页面
      * @var
@@ -55,6 +55,12 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     private $couponUrl;
 
     /**
+     *转链类型，1：长链， 2 ：短链 ，3： 长链+短链，默认短链
+     * @var
+     */
+    private $chainType;
+
+    /**
      * @return mixed
      */
     public function getSubUnionId()
@@ -69,8 +75,8 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     {
         $this->subUnionId = $subUnionId;
     }
-    
-    
+
+
     /**
      * @return mixed
      */
@@ -151,6 +157,21 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
         $this->couponUrl = $couponUrl;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getChainType()
+    {
+        return $this->chainType;
+    }
+
+    /**
+     * @param mixed $chainType
+     */
+    public function setChainType($chainType): void
+    {
+        $this->chainType = $chainType;
+    }
 
 
     /**
@@ -167,15 +188,17 @@ class JdUnionPromotionByunionidGetRequest implements RequestInterface
     public function getParamJson()
     {
         $params = [
-            'materialId' =>$this->materialId,
-            'positionId' =>$this->positionId,
-            'unionId' =>$this->unionId,
-            'pid' =>$this->pid,
-            'couponUrl' =>$this->couponUrl,
+            'materialId' => $this->materialId,
+            'positionId' => $this->positionId,
+            'unionId' => $this->unionId,
+            'pid' => $this->pid,
+            'couponUrl' => $this->couponUrl,
+            'subUnionId' => $this->subUnionId,
+            'chainType' => $this->chainType,
         ];
 
         return json_encode([
-            'promotionCodeReq' => array_filter ($params, function ($val) {
+            'promotionCodeReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);
