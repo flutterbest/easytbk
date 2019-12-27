@@ -36,6 +36,12 @@ class TbkPrivilegeGetRequest
      **/
     private $siteId;
 
+    /**
+     * 渠道关系ID，仅适用于渠道推广场景
+     * @var
+     */
+    private $relationId;
+
     private $apiParas = array();
 
     public function setAdzoneId($adzoneId)
@@ -92,6 +98,24 @@ class TbkPrivilegeGetRequest
     {
         return $this->siteId;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRelationId()
+    {
+        return $this->relationId;
+    }
+
+    /**
+     * @param mixed $relationId
+     */
+    public function setRelationId($relationId): void
+    {
+        $this->relationId = $relationId;
+        $this->apiParas["relation_id"] = $relationId;
+    }
+
 
     public function getApiMethodName()
     {
