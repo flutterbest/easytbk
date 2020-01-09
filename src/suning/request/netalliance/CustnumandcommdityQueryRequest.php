@@ -8,16 +8,16 @@ use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
  * 苏宁开放平台接口 -
  *
  * @author suning
- * @date   2016-11-30
+ * @date   2019-5-29
  */
-class MerchantactivityQueryRequest  extends SelectSuningRequest{
+class CustnumandcommdityQueryRequest  extends SelectSuningRequest{
 
 
 
 
 
 	public function getApiMethodName(){
-		return 'suning.netalliance.merchantactivity.query';
+		return 'suning.netalliance.custnumandcommdity.query';
 	}
 
 	public function getApiParams(){
@@ -26,10 +26,12 @@ class MerchantactivityQueryRequest  extends SelectSuningRequest{
 
 	public function check(){
 		//非空校验
+		RequestCheckUtil::checkNotNull($this->pageNo, 'pageNo');
+		RequestCheckUtil::checkNotNull($this->pageSize, 'pageSize');
 	}
 
 	public function getBizName(){
-		return "queryMerchantactivity";
+		return "queryCustnumandcommdity";
 	}
 
 }

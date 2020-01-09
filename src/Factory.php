@@ -6,6 +6,7 @@ use NiuGengYun\EasyTBK\TaoBao\Application as TaoBao;
 use NiuGengYun\EasyTBK\PinDuoDuo\Application as PinDuoDuo;
 use NiuGengYun\EasyTBK\JingDong\Application as JingDong;
 use NiuGengYun\EasyTBK\Vip\Application as Vip;
+use NiuGengYun\EasyTBK\SuNing\Application as SuNing;
 use NiuGengYun\EasyTBK\Vip\Osp\Context\InvocationContext;
 
 /**
@@ -65,7 +66,7 @@ class Factory
      */
     public function make($name, array $config = [])
     {
-        if (!in_array($name, ['taobao', 'jingdong', 'pinduoduo', 'vip'])) {
+        if (!in_array($name, ['taobao', 'jingdong', 'pinduoduo', 'vip', 'suning'])) {
             throw  new \InvalidArgumentException('static method is not exists');
         }
 
@@ -114,6 +115,12 @@ class Factory
             }
             return array_only($config, ['app_key', 'app_secret', 'access_token', 'format']);
         }
+        if ($name == "suning") {
+            if (!array_key_exists('app_key', $config) || !array_key_exists('app_secret', $config)) {
+                throw new \InvalidArgumentException('The suning client requires app_key and app_secret.');
+            }
+            return array_only($config, ['app_key', 'app_secret', 'format']);
+        }
 
     }
 
@@ -153,6 +160,13 @@ class Factory
             $c->setAppSecret($config['app_secret']);
             $c->setAccessToken($config['access_token']);
             $c->setAppURL('https://gw.vipapis.com/');
+            return $c;
+        }
+        if ($name == "suning") {
+            $c = new SuNing();
+            $c->setAppkey($config['app_key'])  ;
+            $c->setAppSecret($config['app_secret'])  ;
+            $c->setFormat(isset($config['format']) ? $config['format'] : 'json')  ;
             return $c;
         }
     }

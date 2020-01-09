@@ -33,58 +33,53 @@ class Application
     }
 
     /**
-     * 准备发送的参数及检查验证
-     *
-     * @param obj $request
-     * @return json xml
+     * @return string
      */
-    public function execute($request)
+    public function getAppkey(): string
     {
-        $checkParam = $request->getCheckParam();
-        if ($checkParam) {
-            try {
-                $request->check();
-            } catch (\Exception $e) {
-                print_r($e->__toString());
-            }
-        }
-
-        // 获取业务参数
-        $paramsArray = $request->getApiParams();
-        if (empty($paramsArray)) {
-            $paramsArray = '';
-        }
-        $paramsArray = array('sn_request' => array('sn_body' => array(
-            "{$request -> getBizName()}" => $paramsArray
-        )));
-        if ($this->format == "json") {
-            $apiParams = json_encode($paramsArray);
-        } else {
-            $apiParams = ArrayToXML::parse($paramsArray["sn_request"], "sn_request");
-        }
-
-        // 组装系统参数
-        $sysParams["secret_key"] = $this->appSecret;
-        $sysParams["method"] = $request->getApiMethodName();
-        $sysParams["date"] = date('Y-m-d H:i:s');
-        $sysParams["app_key"] = $this->appkey;
-        $sysParams["api_version"] = $this->apiVersion;
-        $sysParams["post_field"] = base64_encode($apiParams);
-
-        // 头信息(内含签名)
-        $signHeader = $this->generateSignHeader($sysParams);
-
-        unset($sysParams);
-
-        // 发起HTTP请求
-        try {
-            $resp = $this->curl($this->serverUrl . "/" . $request->getApiMethodName(), $apiParams, $signHeader);
-        } catch (\Exception $e) {
-            print_r($e->__toString());
-        }
-
-        return $resp;
+        return $this->appkey;
     }
+
+    /**
+     * @param string $appkey
+     */
+    public function setAppkey(string $appkey): void
+    {
+        $this->appkey = $appkey;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAppSecret(): string
+    {
+        return $this->appSecret;
+    }
+
+    /**
+     * @param string $appSecret
+     */
+    public function setAppSecret(string $appSecret): void
+    {
+        $this->appSecret = $appSecret;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFormat(): string
+    {
+        return $this->format;
+    }
+
+    /**
+     * @param string $format
+     */
+    public function setFormat(string $format): void
+    {
+        $this->format = $format;
+    }
+
 
     /**
      * 封装头信息及签名
@@ -102,7 +97,6 @@ class Application
         unset($k, $v);
         $signMethod = $this->signMethod;
         $signString = $signMethod($signString);
-
         // 组装头文件信息
         $signDataHeader = array(
             "Content-Type: text/xml; charset=utf-8",
@@ -115,7 +109,6 @@ class Application
             "User-Agent: " . $this->userAgent,
             "Sdk-Version: " . $this->sdkVersion
         );
-
         return $signDataHeader;
     }
 
@@ -160,5 +153,52 @@ class Application
         curl_close($ch);
         return $response;
     }
-    
+
+    /**
+     * 准备发送的参数及检查验证
+     *
+     * @param obj $request
+     * @return json xml
+     */
+    public function execute($request)
+    {
+        $checkParam = $request->getCheckParam();
+        if ($checkParam) {
+            try {
+                $request->check();
+            } catch (\Exception $e) {
+                dd($e->__toString());
+            }
+        }
+        // 获取业务参数
+        $paramsArray = $request->getApiParams();
+        if (empty($paramsArray)) {
+            $paramsArray = '';
+        }
+        $paramsArray = array('sn_request' => array('sn_body' => array(
+            "{$request -> getBizName()}" => $paramsArray
+        )));
+        if ($this->format == "json") {
+            $apiParams = json_encode($paramsArray);
+        } else {
+            $apiParams = ArrayToXML::parse($paramsArray["sn_request"], "sn_request");
+        }
+        // 组装系统参数
+        $sysParams["secret_key"] = $this->appSecret;
+        $sysParams["method"] = $request->getApiMethodName();
+        $sysParams["date"] = date('Y-m-d H:i:s');
+        $sysParams["app_key"] = $this->appkey;
+        $sysParams["api_version"] = $this->apiVersion;
+        $sysParams["post_field"] = base64_encode($apiParams);
+        // 头信息(内含签名)
+        $signHeader = $this->generateSignHeader($sysParams);
+        unset($sysParams);
+        // 发起HTTP请求
+        try {
+            $resp = $this->curl($this->serverUrl . "/" . $request->getApiMethodName(), $apiParams, $signHeader);
+        } catch (\Exception $e) {
+            dd($e->__toString());
+        }
+        return $resp;
+    }
 }

@@ -8,9 +8,14 @@ use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
  * 苏宁开放平台接口 -
  *
  * @author suning
- * @date   2019-10-28
+ * @date   2019-8-1
  */
-class OrderQueryRequest  extends SelectSuningRequest{
+class ChannelorderQueryRequest  extends SelectSuningRequest{
+
+	/**
+	 *
+	 */
+	private $channelCode;
 
 	/**
 	 *
@@ -28,6 +33,15 @@ class OrderQueryRequest  extends SelectSuningRequest{
 	 *
 	 */
 	private $startTime;
+
+	public function getChannelCode() {
+		return $this->channelCode;
+	}
+
+	public function setChannelCode($channelCode) {
+		$this->channelCode = $channelCode;
+		$this->apiParams["channelCode"] = $channelCode;
+	}
 
 	public function getEndTime() {
 		return $this->endTime;
@@ -59,7 +73,7 @@ class OrderQueryRequest  extends SelectSuningRequest{
 	}
 
 	public function getApiMethodName(){
-		return 'suning.netalliance.order.query';
+		return 'suning.netalliance.channelorder.query';
 	}
 
 	public function getApiParams(){
@@ -68,14 +82,14 @@ class OrderQueryRequest  extends SelectSuningRequest{
 
 	public function check(){
 		//非空校验
+		RequestCheckUtil::checkNotNull($this->channelCode, 'channelCode');
 		RequestCheckUtil::checkNotNull($this->endTime, 'endTime');
-		RequestCheckUtil::checkNotNull($this->pageNo, 'pageNo');
-		RequestCheckUtil::checkNotNull($this->pageSize, 'pageSize');
+		RequestCheckUtil::checkNotNull($this->orderLineStatus, 'orderLineStatus');
 		RequestCheckUtil::checkNotNull($this->startTime, 'startTime');
 	}
 
 	public function getBizName(){
-		return "queryOrder";
+		return "queryChannelorder";
 	}
 
 }

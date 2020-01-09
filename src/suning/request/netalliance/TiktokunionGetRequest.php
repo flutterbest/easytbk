@@ -8,9 +8,9 @@ use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
  * 苏宁开放平台接口 -
  *
  * @author suning
- * @date   2019-9-4
+ * @date   2019-9-19
  */
-class ThirdpartypromotionGetRequest  extends SuningRequest{
+class TiktokunionGetRequest  extends SuningRequest{
 
 	/**
 	 *
@@ -25,7 +25,7 @@ class ThirdpartypromotionGetRequest  extends SuningRequest{
 	/**
 	 *
 	 */
-	private $subUser;
+	private $statParam;
 
 	public function getChannel() {
 		return $this->channel;
@@ -45,17 +45,17 @@ class ThirdpartypromotionGetRequest  extends SuningRequest{
 		$this->apiParams["outerId"] = $outerId;
 	}
 
-	public function getSubUser() {
-		return $this->subUser;
+	public function getStatParam() {
+		return $this->statParam;
 	}
 
-	public function setSubUser($subUser) {
-		$this->subUser = $subUser;
-		$this->apiParams["subUser"] = $subUser;
+	public function setStatParam($statParam) {
+		$this->statParam = $statParam;
+		$this->apiParams["statParam"] = $statParam;
 	}
 
 	public function getApiMethodName(){
-		return 'suning.netalliance.thirdpartygetpromotion.get';
+		return 'suning.netalliance.tiktokgetunion.get';
 	}
 
 	public function getApiParams(){
@@ -66,10 +66,11 @@ class ThirdpartypromotionGetRequest  extends SuningRequest{
 		//非空校验
 		RequestCheckUtil::checkNotNull($this->channel, 'channel');
 		RequestCheckUtil::checkNotNull($this->outerId, 'outerId');
+		RequestCheckUtil::checkNotNull($this->statParam, 'statParam');
 	}
 
 	public function getBizName(){
-		return "getThirdpartygetpromotion";
+		return "getTiktokgetunion";
 	}
 
 }

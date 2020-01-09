@@ -1,28 +1,31 @@
 <?php
 namespace NiuGengYun\EasyTBK\SuNing\Request\Netalliance;
 
-use NiuGengYun\EasyTBK\SuNing\SelectSuningRequest;
+use NiuGengYun\EasyTBK\SuNing\SuningRequest;
 use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
 
 /**
  * 苏宁开放平台接口 -
  *
  * @author suning
- * @date   2017-7-27
+ * @date   2019-12-6
  */
-class MerchantcommodityQueryRequest  extends SelectSuningRequest{
+class QuerypgappletqrcodeurlGetRequest  extends SuningRequest{
 
 	/**
 	 *
 	 */
 	private $activityId;
 
-
+	/**
+	 *
+	 */
+	private $page;
 
 	/**
 	 *
 	 */
-	private $adBookId;
+	private $subPromoter;
 
 	public function getActivityId() {
 		return $this->activityId;
@@ -33,19 +36,26 @@ class MerchantcommodityQueryRequest  extends SelectSuningRequest{
 		$this->apiParams["activityId"] = $activityId;
 	}
 
-
-
-	public function getAdBookId() {
-		return $this->adBookId;
+	public function getPage() {
+		return $this->page;
 	}
 
-	public function setAdBookId($adBookId) {
-		$this->adBookId = $adBookId;
-		$this->apiParams["adBookId"] = $adBookId;
+	public function setPage($page) {
+		$this->page = $page;
+		$this->apiParams["page"] = $page;
+	}
+
+	public function getSubPromoter() {
+		return $this->subPromoter;
+	}
+
+	public function setSubPromoter($subPromoter) {
+		$this->subPromoter = $subPromoter;
+		$this->apiParams["subPromoter"] = $subPromoter;
 	}
 
 	public function getApiMethodName(){
-		return 'suning.netalliance.merchantcommodity.query';
+		return 'suning.netalliance.querypgappletqrcodeurl.get';
 	}
 
 	public function getApiParams(){
@@ -55,11 +65,11 @@ class MerchantcommodityQueryRequest  extends SelectSuningRequest{
 	public function check(){
 		//非空校验
 		RequestCheckUtil::checkNotNull($this->activityId, 'activityId');
-		RequestCheckUtil::checkNotNull($this->adBookId, 'adBookId');
+		RequestCheckUtil::checkNotNull($this->page, 'page');
 	}
 
 	public function getBizName(){
-		return "queryMerchantcommodity";
+		return "getQuerypgappletqrcodeurl";
 	}
 
 }

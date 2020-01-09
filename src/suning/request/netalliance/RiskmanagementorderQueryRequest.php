@@ -8,19 +8,14 @@ use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
  * 苏宁开放平台接口 -
  *
  * @author suning
- * @date   2019-10-28
+ * @date   2019-11-8
  */
-class OrderQueryRequest  extends SelectSuningRequest{
+class RiskmanagementorderQueryRequest  extends SelectSuningRequest{
 
 	/**
 	 *
 	 */
 	private $endTime;
-
-	/**
-	 *
-	 */
-	private $orderLineStatus;
 
 
 
@@ -38,15 +33,6 @@ class OrderQueryRequest  extends SelectSuningRequest{
 		$this->apiParams["endTime"] = $endTime;
 	}
 
-	public function getOrderLineStatus() {
-		return $this->orderLineStatus;
-	}
-
-	public function setOrderLineStatus($orderLineStatus) {
-		$this->orderLineStatus = $orderLineStatus;
-		$this->apiParams["orderLineStatus"] = $orderLineStatus;
-	}
-
 
 
 	public function getStartTime() {
@@ -59,7 +45,7 @@ class OrderQueryRequest  extends SelectSuningRequest{
 	}
 
 	public function getApiMethodName(){
-		return 'suning.netalliance.order.query';
+		return 'suning.netalliance.riskmanagementorder.query';
 	}
 
 	public function getApiParams(){
@@ -75,7 +61,7 @@ class OrderQueryRequest  extends SelectSuningRequest{
 	}
 
 	public function getBizName(){
-		return "queryOrder";
+		return "queryRiskmanagementorder";
 	}
 
 }

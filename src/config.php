@@ -28,4 +28,9 @@ return [
         'access_token' => env ('VIP_APP_ACCESS_TOKEN', ''),
         'format' => 'json',
     ],
+    'suning' => [  // 苏宁 https://open.suning.com/
+        'app_key' => env ('SUNING_APP_KEY', ''),
+        'app_secret' => env ('SUNING_APP_SECRET', ''),
+        'format' => 'json',
+    ],
 ];

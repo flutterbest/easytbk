@@ -8,26 +8,26 @@ use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
  * 苏宁开放平台接口 -
  *
  * @author suning
- * @date   2019-9-19
+ * @date   2019-8-1
  */
-class HomepagepositionurlQueryRequest  extends SuningRequest{
+class CouponinfoQueryRequest  extends SuningRequest{
 
 	/**
 	 *
 	 */
-	private $subUser;
+	private $quanUrl;
 
-	public function getSubUser() {
-		return $this->subUser;
+	public function getQuanUrl() {
+		return $this->quanUrl;
 	}
 
-	public function setSubUser($subUser) {
-		$this->subUser = $subUser;
-		$this->apiParams["subUser"] = $subUser;
+	public function setQuanUrl($quanUrl) {
+		$this->quanUrl = $quanUrl;
+		$this->apiParams["quanUrl"] = $quanUrl;
 	}
 
 	public function getApiMethodName(){
-		return 'suning.netalliance.homepagepositionurl.query';
+		return 'suning.netalliance.couponinfo.query';
 	}
 
 	public function getApiParams(){
@@ -36,10 +36,11 @@ class HomepagepositionurlQueryRequest  extends SuningRequest{
 
 	public function check(){
 		//非空校验
+		RequestCheckUtil::checkNotNull($this->quanUrl, 'quanUrl');
 	}
 
 	public function getBizName(){
-		return "queryHomepagepositionurl";
+		return "queryCouponinfo";
 	}
 
 }

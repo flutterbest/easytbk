@@ -8,26 +8,26 @@ use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
  * 苏宁开放平台接口 -
  *
  * @author suning
- * @date   2019-9-19
+ * @date   2019-10-28
  */
-class HomepagepositionurlQueryRequest  extends SuningRequest{
+class TwittershareurlQueryRequest  extends SuningRequest{
 
 	/**
 	 *
 	 */
-	private $subUser;
+	private $goodsNo;
 
-	public function getSubUser() {
-		return $this->subUser;
+	public function getGoodsNo() {
+		return $this->goodsNo;
 	}
 
-	public function setSubUser($subUser) {
-		$this->subUser = $subUser;
-		$this->apiParams["subUser"] = $subUser;
+	public function setGoodsNo($goodsNo) {
+		$this->goodsNo = $goodsNo;
+		$this->apiParams["goodsNo"] = $goodsNo;
 	}
 
 	public function getApiMethodName(){
-		return 'suning.netalliance.homepagepositionurl.query';
+		return 'suning.netalliance.twittershareurl.query';
 	}
 
 	public function getApiParams(){
@@ -36,10 +36,11 @@ class HomepagepositionurlQueryRequest  extends SuningRequest{
 
 	public function check(){
 		//非空校验
+		RequestCheckUtil::checkNotNull($this->goodsNo, 'goodsNo');
 	}
 
 	public function getBizName(){
-		return "queryHomepagepositionurl";
+		return "queryTwittershareurl";
 	}
 
 }

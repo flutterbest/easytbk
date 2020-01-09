@@ -1,71 +1,62 @@
 <?php
+namespace NiuGengYun\EasyTBK\SuNing\Request\Netalliance;
+
+use NiuGengYun\EasyTBK\SuNing\SuningRequest;
+use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
+
 /**
  * 苏宁开放平台接口 -
  *
  * @author suning
  * @date   2019-4-23
  */
+class CustompromotionurlQueryRequest  extends SuningRequest{
 
-namespace NiuGengYun\EasyTBK\SuNing\Request\Netalliance;
+	/**
+	 *
+	 */
+	private $adBookId;
 
-use NiuGengYun\EasyTBK\SuNing\SuningRequest;
-use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
+	/**
+	 *
+	 */
+	private $visitUrl;
 
-class CustompromotionurlQueryRequest extends SuningRequest
-{
-    /**
-     *
-     */
-    private $adBookId;
+	public function getAdBookId() {
+		return $this->adBookId;
+	}
 
-    /**
-     *
-     */
-    private $visitUrl;
+	public function setAdBookId($adBookId) {
+		$this->adBookId = $adBookId;
+		$this->apiParams["adBookId"] = $adBookId;
+	}
 
-    public function getAdBookId()
-    {
-        return $this->adBookId;
-    }
+	public function getVisitUrl() {
+		return $this->visitUrl;
+	}
 
-    public function setAdBookId($adBookId)
-    {
-        $this->adBookId = $adBookId;
-        $this->apiParams["adBookId"] = $adBookId;
-    }
+	public function setVisitUrl($visitUrl) {
+		$this->visitUrl = $visitUrl;
+		$this->apiParams["visitUrl"] = $visitUrl;
+	}
 
-    public function getVisitUrl()
-    {
-        return $this->visitUrl;
-    }
+	public function getApiMethodName(){
+		return 'suning.netalliance.custompromotionurl.query';
+	}
 
-    public function setVisitUrl($visitUrl)
-    {
-        $this->visitUrl = $visitUrl;
-        $this->apiParams["visitUrl"] = $visitUrl;
-    }
+	public function getApiParams(){
+		return $this->apiParams;
+	}
 
-    public function getApiMethodName()
-    {
-        return 'suning.netalliance.custompromotionurl.query';
-    }
+	public function check(){
+		//非空校验
+		RequestCheckUtil::checkNotNull($this->adBookId, 'adBookId');
+		RequestCheckUtil::checkNotNull($this->visitUrl, 'visitUrl');
+	}
 
-    public function getApiParams()
-    {
-        return $this->apiParams;
-    }
-
-    public function check()
-    {
-        //非空校验
-        RequestCheckUtil::checkNotNull($this->adBookId, 'adBookId');
-        RequestCheckUtil::checkNotNull($this->visitUrl, 'visitUrl');
-    }
-
-    public function getBizName()
-    {
-        return "queryCustompromotionurl";
-    }
+	public function getBizName(){
+		return "queryCustompromotionurl";
+	}
 
 }
 

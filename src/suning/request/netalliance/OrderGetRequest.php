@@ -1,55 +1,47 @@
 <?php
+namespace NiuGengYun\EasyTBK\SuNing\Request\Netalliance;
+
+use NiuGengYun\EasyTBK\SuNing\SuningRequest;
+use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
+
 /**
  * 苏宁开放平台接口 -
  *
  * @author suning
  * @date   2018-2-7
  */
+class OrderGetRequest  extends SuningRequest{
 
-namespace NiuGengYun\EasyTBK\SuNing\Request\Netalliance;
+	/**
+	 *
+	 */
+	private $orderCode;
 
-use NiuGengYun\EasyTBK\SuNing\SuningRequest;
-use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
+	public function getOrderCode() {
+		return $this->orderCode;
+	}
 
-class OrderGetRequest extends SuningRequest
-{
+	public function setOrderCode($orderCode) {
+		$this->orderCode = $orderCode;
+		$this->apiParams["orderCode"] = $orderCode;
+	}
 
-    /**
-     *
-     */
-    private $orderCode;
+	public function getApiMethodName(){
+		return 'suning.netalliance.order.get';
+	}
 
-    public function getOrderCode()
-    {
-        return $this->orderCode;
-    }
+	public function getApiParams(){
+		return $this->apiParams;
+	}
 
-    public function setOrderCode($orderCode)
-    {
-        $this->orderCode = $orderCode;
-        $this->apiParams["orderCode"] = $orderCode;
-    }
+	public function check(){
+		//非空校验
+		RequestCheckUtil::checkNotNull($this->orderCode, 'orderCode');
+	}
 
-    public function getApiMethodName()
-    {
-        return 'suning.netalliance.order.get';
-    }
-
-    public function getApiParams()
-    {
-        return $this->apiParams;
-    }
-
-    public function check()
-    {
-        //非空校验
-        RequestCheckUtil::checkNotNull($this->orderCode, 'orderCode');
-    }
-
-    public function getBizName()
-    {
-        return "getOrder";
-    }
+	public function getBizName(){
+		return "getOrder";
+	}
 
 }
 

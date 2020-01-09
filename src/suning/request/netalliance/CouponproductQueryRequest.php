@@ -1,22 +1,66 @@
 <?php
+namespace NiuGengYun\EasyTBK\SuNing\Request\Netalliance;
+
+use NiuGengYun\EasyTBK\SuNing\SelectSuningRequest;
+use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
+
 /**
  * 苏宁开放平台接口 -
  *
  * @author suning
  * @date   2017-10-11
  */
-
-namespace NiuGengYun\EasyTBK\SuNing\Request\Netalliance;
-
-use NiuGengYun\EasyTBK\SuNing\SelectSuningRequest;
-use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
-
 class CouponproductQueryRequest extends SelectSuningRequest
 {
+
     /**
-     *
+     * @var
+     */
+    protected $pageNo;
+    /**
+     * @var
+     */
+    protected $pageSize;
+
+    /**
+     * @var
      */
     private $positionId;
+
+    /**
+     * @return mixed
+     */
+    public function getPageNo()
+    {
+        return $this->pageNo;
+    }
+
+    /**
+     * @param mixed $pageNo
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->pageNo = $pageNo;
+        $this->apiParams["pageNo"] = $pageNo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPageSize()
+    {
+        return $this->pageSize;
+    }
+
+    /**
+     * @param mixed $pageSize
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->pageSize = $pageSize;
+        $this->apiParams["pageSize"] = $pageSize;
+
+    }
 
 
     public function getPositionId()
@@ -40,12 +84,12 @@ class CouponproductQueryRequest extends SelectSuningRequest
         return $this->apiParams;
     }
 
-    public function check()
-    {
-        //非空校验
-        RequestCheckUtil::checkNotNull($this->pageNo, 'pageNo');
-        RequestCheckUtil::checkNotNull($this->positionId, 'positionId');
-    }
+//    public function check()
+//    {
+//        //非空校验
+//        RequestCheckUtil::checkNotNull($this->pageNo, 'pageNo');
+//        RequestCheckUtil::checkNotNull($this->positionId, 'positionId');
+//    }
 
     public function getBizName()
     {
