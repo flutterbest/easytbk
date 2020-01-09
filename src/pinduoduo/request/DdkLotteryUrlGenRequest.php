@@ -50,15 +50,7 @@ class DdkLotteryUrlGenRequest implements RequestInterface
     private $customParameters;
 
 
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
 
-    public function getType()
-    {
-        return $this->type;
-    }
 
     /**
      * @return mixed

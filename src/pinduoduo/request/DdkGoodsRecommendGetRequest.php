@@ -15,15 +15,7 @@ class DdkGoodsRecommendGetRequest implements  RequestInterface
 
     private $channelType;
 
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
 
-    public function getType()
-    {
-        return $this->type;
-    }
 
     public function setOffset($offset)
     {

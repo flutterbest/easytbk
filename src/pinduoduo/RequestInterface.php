@@ -12,8 +12,4 @@ namespace NiuGengYun\EasyTBK\PinDuoDuo;
 interface RequestInterface
 {
     public function getParams();
-
-    public function setType($type);
-
-    public function getType();
 }

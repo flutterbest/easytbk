@@ -18,18 +18,6 @@ class DdkCateListRequest implements  RequestInterface
      */
     private $parent_opt_id = '0';
 
-
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
-
-    public function getType()
-    {
-        return $this->type;
-    }
-
-
     public function setParentOptId($parent_opt_id)
     {
         $this->parent_opt_id = $parent_opt_id;

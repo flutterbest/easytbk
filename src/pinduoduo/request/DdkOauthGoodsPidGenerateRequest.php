@@ -12,15 +12,7 @@ class DdkOauthGoodsPidGenerateRequest implements RequestInterface
 
     private $name;
 
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
 
-    public function getType()
-    {
-        return $this->type;
-    }
     public function setNumber($number)
     {
         $this->number = $number;

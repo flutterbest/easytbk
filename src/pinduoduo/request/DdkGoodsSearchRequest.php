@@ -104,15 +104,7 @@ class DdkGoodsSearchRequest implements RequestInterface
      */
     private $activityTags;
 
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
 
-    public function getType()
-    {
-        return $this->type;
-    }
 
     public function setKeyWord($keyword)
     {

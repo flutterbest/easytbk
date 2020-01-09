@@ -26,15 +26,7 @@ class DdkGoodsZsUnitUrlGenRequest implements  RequestInterface
     private $source_url;
 
 
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
 
-    public function getType()
-    {
-        return $this->type;
-    }
 
     public function setPid($pid)
     {

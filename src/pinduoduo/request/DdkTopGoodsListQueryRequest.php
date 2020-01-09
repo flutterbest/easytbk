@@ -38,15 +38,7 @@ class DdkTopGoodsListQueryRequest implements RequestInterface
     private $sortType;
 
 
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
 
-    public function getType()
-    {
-        return $this->type;
-    }
 
     public function setSortType($sortType)
     {

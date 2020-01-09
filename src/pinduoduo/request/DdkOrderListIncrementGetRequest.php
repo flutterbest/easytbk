@@ -21,15 +21,7 @@ class DdkOrderListIncrementGetRequest implements RequestInterface
 
     private $page;
 
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
 
-    public function getType()
-    {
-        return $this->type;
-    }
 
     public function setStartUpdateTime($startUpdateTime)
     {
