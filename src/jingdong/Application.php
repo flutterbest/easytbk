@@ -74,6 +74,7 @@ class Application
      */
     public function execute($request, $access_token = null)
     {
+        dd(self::getInstance ());
         $timestamp = date ('Y-m-d H:i:s');
 
 

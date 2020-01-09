@@ -11,9 +11,9 @@
 https://www.yuque.com/books/share/9b90cef4-4774-4f1b-bbf1-38bdcf317f5c?#（密码：hz4a）
 
 # TODO
-唯品会、蘑菇街、苏宁
+蘑菇街、苏宁
 
-# 使用方法
+# 安装
 1、安装扩展包，该扩展包只支持laravel
 
 ```bash
@@ -27,7 +27,10 @@ composer require niugengyun/easytbk
 php artisan vendor:publish --provider "NiuGengYun\EasyTBK\ServiceProvider"
 ```
 
-3、淘宝SDK初始化
+# 初始化SDK
+每个平台SDK的具体调用方法参考各平台的文档
+
+1、淘宝SDK初始化
 
 ```php
 <?php
@@ -40,7 +43,7 @@ $req->setNumIids ($numIids);
 return $client->execute ($req);
 ```
 
-4、京东SDK初始化
+2、京东SDK初始化
 ```php
 <?php
 use NiuGengYun\EasyTBK\Factory;
@@ -52,8 +55,7 @@ $req->setSkuIds("$itemid");
 return $jd->execute($req);
 ```
 
-
-5、拼多多SDK初始化
+3、拼多多SDK初始化
 ```php
 <?php
 use NiuGengYun\EasyTBK\Factory;
@@ -63,4 +65,21 @@ $pdd = Factory::pinduoduo();
 $req = new DdkGoodsDetailRequest();
 $req->setGoodsIdList("[$itemid]");
 return  $pdd->execute($req);
+```
+
+4、唯品会SDK初始化
+```php
+<?php
+use NiuGengYun\EasyTBK\Factory;
+use NiuGengYun\EasyTBK\Vip\Request\PidGenRequest;
+use NiuGengYun\EasyTBK\Vip\Request\UnionPidServiceClient;
+
+$service= UnionPidServiceClient::getService();
+Factory::vip();
+$pidGenRequest1 = new PidGenRequest();
+$pidNameList2 = array();
+$pidNameList2[0] = "value";
+$pidGenRequest1->pidNameList = $pidNameList2;
+$pidGenRequest1->requestId = "requestId";
+dd($service->genPidWithOauth($pidGenRequest1));
 ```

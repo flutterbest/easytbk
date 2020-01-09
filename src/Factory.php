@@ -2,10 +2,11 @@
 
 namespace NiuGengYun\EasyTBK;
 
-use function GuzzleHttp\Psr7\str;
 use NiuGengYun\EasyTBK\TaoBao\Application as TaoBao;
 use NiuGengYun\EasyTBK\PinDuoDuo\Application as PinDuoDuo;
 use NiuGengYun\EasyTBK\JingDong\Application as JingDong;
+use NiuGengYun\EasyTBK\Vip\Application as Vip;
+use NiuGengYun\EasyTBK\Vip\Osp\Context\InvocationContext;
 
 /**
  * Class Factory.
@@ -29,8 +30,8 @@ class Factory
      */
     public static function __callStatic($name, $arguments)
     {
-        $obj = self::getInstance ();
-        return $obj->make ($name, ...$arguments);
+        $obj = self::getInstance();
+        return $obj->make($name, ...$arguments);
     }
 
 
@@ -64,16 +65,16 @@ class Factory
      */
     public function make($name, array $config = [])
     {
-        if (!in_array ($name, ['taobao', 'jingdong', 'pinduoduo'])) {
+        if (!in_array($name, ['taobao', 'jingdong', 'pinduoduo', 'vip'])) {
             throw  new \InvalidArgumentException('static method is not exists');
         }
 
-        if (count ($config) == 0) {
-            $config = config ("{$this->getConfigName ()}.{$name}", []);
+        if (count($config) == 0) {
+            $config = config("{$this->getConfigName ()}.{$name}", []);
         }
-        $config = $this->getConfig ($name, $config);
+        $config = $this->getConfig($name, $config);
 
-        return $this->getClient ($name, $config);
+        return $this->getClient($name, $config);
     }
 
 
@@ -82,30 +83,36 @@ class Factory
      *
      * @param string[] $config
      *
+     * @return string[]
      * @throws \InvalidArgumentException
      *
-     * @return string[]
      */
     protected function getConfig(string $name, array $config)
     {
         if ($name == "taobao") {
-            if (!array_key_exists ('app_key', $config) || !array_key_exists ('app_secret', $config)) {
+            if (!array_key_exists('app_key', $config) || !array_key_exists('app_secret', $config)) {
                 throw new \InvalidArgumentException('The top client requires api keys.');
             }
-            $config['app_key'] = (string) $config['app_key'];
-            return array_only ($config, ['app_key', 'app_secret', 'format']);
+            $config['app_key'] = (string)$config['app_key'];
+            return array_only($config, ['app_key', 'app_secret', 'format']);
         }
         if ($name == "pinduoduo") {
-            if (!array_key_exists ('client_id', $config) || !array_key_exists ('client_secret', $config)) {
+            if (!array_key_exists('client_id', $config) || !array_key_exists('client_secret', $config)) {
                 throw new \InvalidArgumentException('The pinduoduo client requires client_id and client_secret.');
             }
-            return array_only ($config, ['client_id', 'client_secret', 'format']);
+            return array_only($config, ['client_id', 'client_secret', 'format']);
         }
         if ($name == "jingdong") {
-            if (!array_key_exists ('app_key', $config) || !array_key_exists ('app_secret', $config)) {
+            if (!array_key_exists('app_key', $config) || !array_key_exists('app_secret', $config)) {
                 throw new \InvalidArgumentException('The jingdong client requires app_key and app_secret.');
             }
-            return array_only ($config, ['app_key', 'app_secret', 'format']);
+            return array_only($config, ['app_key', 'app_secret', 'format']);
+        }
+        if ($name == "vip") {
+            if (!array_key_exists('app_key', $config) || !array_key_exists('app_secret', $config)) {
+                throw new \InvalidArgumentException('The vip client requires app_key and app_secret.');
+            }
+            return array_only($config, ['app_key', 'app_secret', 'access_token', 'format']);
         }
 
     }
@@ -121,7 +128,7 @@ class Factory
     {
         if ($name == "taobao") {
             $c = new TaoBao;
-            $c->appkey = (string) $config['app_key'];
+            $c->appkey = (string)$config['app_key'];
             $c->secretKey = $config['app_secret'];
             $c->format = isset($config['format']) ? $config['format'] : 'json';
             return $c;
@@ -138,6 +145,14 @@ class Factory
             $c->appKey = $config['app_key'];
             $c->appSecret = $config['app_secret'];
             $c->format = isset($config['format']) ? $config['format'] : 'json';
+            return $c;
+        }
+        if ($name == "vip") {
+            $c = InvocationContext::getInstance();
+            $c->setAppKey($config['app_key']);
+            $c->setAppSecret($config['app_secret']);
+            $c->setAccessToken($config['access_token']);
+            $c->setAppURL('https://gw.vipapis.com/');
             return $c;
         }
     }
