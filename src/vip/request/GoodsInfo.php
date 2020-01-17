@@ -772,7 +772,7 @@ class GoodsInfo {
 
 			if($needSkip){
 
-				\Osp\Protocol\ProtocolUtil::skip($input);
+				\NiuGengYun\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
 			}
 
 			$input->readFieldEnd();
