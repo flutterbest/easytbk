@@ -11,7 +11,9 @@
 https://www.yuque.com/books/share/9b90cef4-4774-4f1b-bbf1-38bdcf317f5c?#（密码：hz4a）
 
 # TODO
-蘑菇街联盟SDK待适配，因为没有测试号
+
+1、由于唯品会自身SDK问题，抽空重构官方SDK(python版本已适配完成)
+2、适配蘑菇街SDK (python版本已适配完成)
 
 `苏宁、蘑菇街SDK已经适配，接口较多，没有全部测试，如果发现问题请提交ISSUE或者PR，我会在第一时间修复`
 
