@@ -15,7 +15,7 @@
         "php": ">=7.0.0",
         "illuminate/support": "~5.3|~6.0|~7.0",
         "graham-campbell/manager": "^2.0|^3.0|^4.0",
-        "laravel/helpers": "^1.1"
+        "laravel/helpers": "^1.2"
     },
     "autoload": {
         "psr-4": {
