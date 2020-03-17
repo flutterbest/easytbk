@@ -73,7 +73,7 @@ class Application
 			$postMultipart = false;
 			foreach ($postFields as $k => $v)
 			{
-				if(!is_string($v) && !is_numeric($v))
+				if(!is_string($v) || !is_numeric($v))
 					continue ;
 				if("@" != substr($v, 0, 1))//判断是不是文件上传
 				{
