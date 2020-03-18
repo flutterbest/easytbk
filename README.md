@@ -98,3 +98,7 @@ $req->setPositionId("12");
 $resp = $c->execute($req);
 dd($resp);
 ```
+
+6、蘑菇街
+
+蘑菇街使用人数太少，不值得耗费精力开发，所以暂时不打算集成。
