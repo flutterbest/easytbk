@@ -130,6 +130,14 @@ class JdUnionGoodsJingfenQueryRequest implements RequestInterface
     }
 
     /**
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->method;
+    }
+    
+    /**
      * @return mixed
      */
     public function getParamJson()
