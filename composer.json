@@ -1,20 +1,21 @@
 {
-    "name": "maxzhang/easytbk",
+    "name": "niugengyun/easytbk",
     "type": "library",
-    "description": "no description",
-    "keywords": ["sdk"],
-    "homepage": "https://github.com/maxzhang666/easytbk.git",
+    "description": "淘客六合一SDK，支持淘宝联盟、京东联盟、多多进宝、唯品会、苏宁、蘑菇街. 微信:bugfixed",
+    "keywords": ["淘宝客","淘宝客SDK"],
+    "homepage": "https://github.com/niugengyun/easytbk",
     "license": "MIT",
     "authors": [
         {
-            "name": "maxzhang",
-            "email": "373884384@qq.com"
+            "name": "niugengyun",
+            "email": "515343908@qq.com"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "~5.0|~5.1|~5.2|~5.3|~5.4|~5.5|~5.6|~5.7|~5.8",
-        "graham-campbell/manager": "^2.0|^3.0|^4.0"
+        "php": ">=7.0.0",
+        "illuminate/support": "~5.8|~6.0|~7.0",
+        "graham-campbell/manager": "^2.0|^3.0|^4.0",
+        "laravel/helpers": "^1.2"
     },
     "autoload": {
         "psr-4": {
