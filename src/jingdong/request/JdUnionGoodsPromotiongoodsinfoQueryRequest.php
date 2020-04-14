@@ -12,8 +12,8 @@ use NiuGengYun\EasyTBK\JingDong\RequestInterface;
 class JdUnionGoodsPromotiongoodsinfoQueryRequest implements RequestInterface
 {
     /**
-     * 获取推广商品信息接口
-     * @url https://union.jd.com/#/openplatform/api/563
+     * 获取商品信息接口
+     * @url https://union.jd.com/openplatform/api/10422
      * @var string
      */
     private $method = 'jd.union.open.goods.promotiongoodsinfo.query';
