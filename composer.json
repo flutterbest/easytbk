@@ -1,9 +1,9 @@
 {
-    "name": "niugengyun/easytbk",
+    "name": "maxzhang/easytbk",
     "type": "library",
     "description": "no description",
     "keywords": ["sdk"],
-    "homepage": "https://github.com/niugengyun/easytbk",
+    "homepage": "https://github.com/maxzhang666/easytbk.git",
     "license": "MIT",
     "authors": [
         {

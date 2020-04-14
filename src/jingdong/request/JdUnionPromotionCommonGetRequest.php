@@ -184,6 +184,39 @@ class JdUnionPromotionCommonGetRequest implements RequestInterface
         $this->pid = $pid;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCouponUrl()
+    {
+        return $this->couponUrl;
+    }
+
+    /**
+     * @param mixed $couponUrl
+     */
+    public function setCouponUrl($couponUrl)
+    {
+        $this->couponUrl = $couponUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGiftCouponKey()
+    {
+        return $this->giftCouponKey;
+    }
+
+    /**
+     * @param mixed $giftCouponKey
+     */
+    public function setGiftCouponKey($giftCouponKey)
+    {
+        $this->giftCouponKey = $giftCouponKey;
+    }
+
+
 
     /**
      * @return string
