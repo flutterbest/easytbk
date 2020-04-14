@@ -13,7 +13,7 @@ class JdUnionPromotionCommonGetRequest implements RequestInterface
 {
     /**
      * 获取通用推广链接
-     * @url https://union.jd.com/#/openplatform/api/691
+     * @url https://union.jd.com/#/openplatform/api/10421
      * @var string
      */
     private $method = 'jd.union.open.promotion.common.get';
@@ -59,6 +59,18 @@ class JdUnionPromotionCommonGetRequest implements RequestInterface
      * @var
      */
     private $pid;
+
+    /**
+     * 优惠券领取链接
+     * @var
+     */
+    private $couponUrl;
+
+    /**
+     * 礼金批次号
+     * @var
+     */
+    private $giftCouponKey;
 
     /**
      * @return mixed
@@ -187,17 +199,19 @@ class JdUnionPromotionCommonGetRequest implements RequestInterface
     public function getParamJson()
     {
         $params = [
-            'subUnionId' => $this->subUnionId,
-            'protocol' => $this->protocol,
-            'ext1' => $this->ext1,
-            'siteId' => $this->siteId,
-            'materialId' => $this->materialId,
-            'positionId' => $this->positionId,
-            'pid' => $this->pid,
+            'subUnionId'    => $this->subUnionId,
+            'protocol'      => $this->protocol,
+            'ext1'          => $this->ext1,
+            'siteId'        => $this->siteId,
+            'materialId'    => $this->materialId,
+            'positionId'    => $this->positionId,
+            'pid'           => $this->pid,
+            'couponUrl'     => $this->couponUrl,
+            'giftCouponKey' => $this->giftCouponKey
         ];
 
         return json_encode([
-            'promotionCodeReq' => array_filter ($params, function ($val) {
+            'promotionCodeReq' => array_filter($params, function ($val) {
                 return $val != null;
             })
         ]);
