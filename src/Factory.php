@@ -11,12 +11,18 @@ use NiuGengYun\EasyTBK\Vip\Osp\Context\InvocationContext;
 
 /**
  * Class Factory.
+ *
+ * @method TaoBao taobao()
+ * @method PinDuoDuo pinduoduo()
+ * @method JingDong jingdong()
+ * @method Vip vip()
+ * @method SuNing suning()
  */
 class Factory
 {
 
     /**
-     * @var 单例模式
+     * @var static 单例模式
      */
     private static $instance;
 
