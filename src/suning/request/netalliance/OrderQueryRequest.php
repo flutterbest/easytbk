@@ -66,7 +66,7 @@ class OrderQueryRequest  extends SelectSuningRequest{
 		return $this->apiParams;
 	}
 
-	public function check(){
+	public function check($pageNoMin = 1, $pageNoMax = 99999, $pageSizeMin = 10, $pageSizeMax = 50){
 		//非空校验
 		RequestCheckUtil::checkNotNull($this->endTime, 'endTime');
 		RequestCheckUtil::checkNotNull($this->pageNo, 'pageNo');
