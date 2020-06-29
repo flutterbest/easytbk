@@ -14,7 +14,7 @@ interface UnionUrlServiceIf{
 
 	public function genByGoodsId( $goodsIdList, $chanTag, $requestId);
 
-	public function genByGoodsIdWithOauth( $goodsIdList, $chanTag, $requestId);
+	public function genByGoodsIdWithOauth( $goodsIdList, $chanTag, $requestId, $statParam);
 
 	public function genByVIPUrl( $urlList, $chanTag, $requestId);
 
@@ -68,13 +68,13 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	}
 
 
-	public function genByGoodsIdWithOauth( $goodsIdList, $chanTag, $requestId){
+	public function genByGoodsIdWithOauth( $goodsIdList, $chanTag, $requestId , $statParam){
 
-		$this->send_genByGoodsIdWithOauth( $goodsIdList, $chanTag, $requestId);
+		$this->send_genByGoodsIdWithOauth( $goodsIdList, $chanTag, $requestId, $statParam);
 		return $this->recv_genByGoodsIdWithOauth();
 	}
 
-	public function send_genByGoodsIdWithOauth( $goodsIdList, $chanTag, $requestId){
+	public function send_genByGoodsIdWithOauth( $goodsIdList, $chanTag, $requestId, $statParam){
 
 		$this->initInvocation("genByGoodsIdWithOauth");
 		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_genByGoodsIdWithOauth_args();
@@ -84,6 +84,8 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 		$args->chanTag = $chanTag;
 
 		$args->requestId = $requestId;
+
+		$args->statParam = $statParam;
 
 		$this->send_base($args);
 	}
