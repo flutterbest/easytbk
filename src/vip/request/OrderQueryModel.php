@@ -21,6 +21,7 @@ class OrderQueryModel {
 	public $requestId = null;
 	public $updateTimeStart = null;
 	public $updateTimeEnd = null;
+	public $orderSnList = null;
 
 	public function __construct($vals=null){
 
@@ -50,6 +51,9 @@ class OrderQueryModel {
 			),
 			8 => array(
 			'var' => 'updateTimeEnd'
+			),
+			9 => array(
+				'var' => 'orderSnList'
 			),
 
 			);
@@ -104,6 +108,11 @@ class OrderQueryModel {
 			if (isset($vals['updateTimeEnd'])){
 
 				$this->updateTimeEnd = $vals['updateTimeEnd'];
+			}
+
+			if (isset($vals['orderSnList'])){
+
+				$this->orderSnList = $vals['orderSnList'];
 			}
 
 
@@ -205,6 +214,33 @@ class OrderQueryModel {
 			}
 
 
+			if ("orderSnList" == $schemeField){
+
+				$needSkip = false;
+
+				$this->orderSnList = array();
+				$_size0 = 0;
+				$input->readListBegin();
+				while(true){
+
+					try{
+
+						$elem0 = null;
+						$input->readString($elem0);
+
+						$this->orderSnList[$_size0++] = $elem0;
+					}
+					catch(\Exception $e){
+
+						break;
+					}
+				}
+
+				$input->readListEnd();
+
+			}
+
+
 
 			if($needSkip){
 
@@ -284,6 +320,28 @@ class OrderQueryModel {
 
 			$xfer += $output->writeFieldBegin('updateTimeEnd');
 			$xfer += $output->writeI64($this->updateTimeEnd);
+
+			$xfer += $output->writeFieldEnd();
+		}
+
+
+		if($this->orderSnList !== null) {
+
+			$xfer += $output->writeFieldBegin('orderSnList');
+
+			if (!is_array($this->orderSnList)){
+
+				throw new \Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+			}
+
+			$output->writeListBegin();
+			foreach ($this->orderSnList as $iter0){
+
+				$xfer += $output->writeString($iter0);
+
+			}
+
+			$output->writeListEnd();
 
 			$xfer += $output->writeFieldEnd();
 		}
