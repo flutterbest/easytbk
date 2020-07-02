@@ -104,7 +104,3 @@ $req->setPositionId("12");
 $resp = $c->execute($req);
 dd($resp);
 ```
-
-6、蘑菇街
-
-不打算集成
