@@ -16,7 +16,9 @@
 淘宝联盟、京东联盟、多多进宝、唯品客、苏宁推客SDK封装，该项目长期维护，如发现问题，请提交PR。
 
 # 联系方式
-微信：bugfixed ，加我微信，我拉你们进交流群
+<div style="align: center">
+<img src="https://cdn.nlark.com/yuque/0/2020/jpeg/129936/1594276188090-5351286f-fee9-42b8-b000-9bb69f42d513.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_14%2Ctext_5bCP54Gr6IqxUk9J%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fresize%2Cw_746"/>
+</div>
 
 # 安装
 1、安装扩展包，该扩展包只支持laravel
