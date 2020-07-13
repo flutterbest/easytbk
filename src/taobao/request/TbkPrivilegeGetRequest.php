@@ -41,7 +41,20 @@ class TbkPrivilegeGetRequest
      * @var
      */
     private $relationId;
+    
+    
+    /**
+     * 会员运营ID
+     * @var
+     */
+    private $specialId;
 
+     /**
+     * 	淘宝客外部用户标记，如自身系统账户ID；微信ID等
+     * @var
+     */
+    private $externalId;
+    
     private $apiParas = array();
 
     public function setAdzoneId($adzoneId)
@@ -116,6 +129,43 @@ class TbkPrivilegeGetRequest
         $this->apiParas["relation_id"] = $relationId;
     }
 
+    
+   /**
+     * @return mixed
+     */
+    public function getSpecialId()
+    {
+        return $this->specialId;
+    }
+
+    /**
+     * @param mixed $specialId
+     */
+    public function setSpecialId($specialId): void
+    {
+        $this->specialId = $specialId;
+        $this->apiParas["special_id"] = $specialId;
+    }
+
+    
+    /**
+     * @return mixed
+     */
+    public function getExternalId()
+    {
+        return $this->externalId;
+    }
+
+    /**
+     * @param mixed $externalId
+     */
+    public function setExternalId($externalId): void
+    {
+        $this->externalId = $externalId;
+        $this->apiParas["external_id"] = $externalId;
+    }
+
+    
 
     public function getApiMethodName()
     {
