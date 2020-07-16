@@ -23,6 +23,12 @@ class JdUnionGoodsQueryRequest implements RequestInterface
      * @var
      */
     private $isPG;
+    
+    /**
+     * 京喜商品类型，1京喜、2京喜工厂直供、3京喜优选（包含3时可在京东APP购买），入参多个值表示或条件查询
+     * @var
+     */
+    private $jxFlags;
 
     /**
      * skuid集合(一次最多支持查询100个sku)，数组类型开发时记得加[]
@@ -177,6 +183,22 @@ class JdUnionGoodsQueryRequest implements RequestInterface
     public function setIsPG($isPG): void
     {
         $this->isPG = $isPG;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getjxFlags()
+    {
+        return $this->jxFlags;
+    }
+
+    /**
+     * @param mixed $jxFlags
+     */
+    public function setJxFlags($jxFlags): void
+    {
+        $this->jxFlags = $jxFlags;
     }
 
     /**
@@ -563,6 +585,7 @@ class JdUnionGoodsQueryRequest implements RequestInterface
     {
         $params = [
             'isPG' => $this->isPG,
+            'jxFlags' => $this->jxFlags,
             'skuIds' => $this->skuIds,
             'sort' => $this->sort,
             'keyword' => $this->keyword,
