@@ -17,11 +17,8 @@
 
 # 联系方式
 
-下面是二维码，打开速度较慢，等一会儿就出来了
+微信：bugfixed
 
-<div style="align: center">
-<img src="https://cdn.nlark.com/yuque/0/2020/jpeg/129936/1594276188090-5351286f-fee9-42b8-b000-9bb69f42d513.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_14%2Ctext_5bCP54Gr6IqxUk9J%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fresize%2Cw_746"/>
-</div>
 
 # 安装
 1、安装扩展包，该扩展包只支持laravel
