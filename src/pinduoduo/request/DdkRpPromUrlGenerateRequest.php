@@ -23,6 +23,11 @@ class DdkRpPromUrlGenerateRequest  implements RequestInterface
      * @var
      */
     private $pid;
+    /**
+     * 活动类型
+     * @var
+     */
+    private $channelType;
 
     /**
      * 是否生成短链接，true-是，false-否
@@ -59,6 +64,16 @@ class DdkRpPromUrlGenerateRequest  implements RequestInterface
     public function getPid()
     {
         return $this->pid;
+    }
+
+    public function setChannelType($channelType)
+    {
+        $this->channelType = $channelType;
+    }
+
+    public function getChannelType()
+    {
+        return $this->channelType;
     }
 
     public function setGenerateShortUrl($generateShortUrl)
