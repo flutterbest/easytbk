@@ -12,10 +12,10 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "illuminate/support": "~5.8|~6.0|~7.0",
+        "php": ">=7.1.0",
+        "illuminate/support": "~5.8|~6.0|~7.0|~8.0",
         "graham-campbell/manager": "^2.0|^3.0|^4.0",
-        "laravel/helpers": "^1.2"
+        "laravel/helpers": "^1.4"
     },
     "autoload": {
         "psr-4": {
