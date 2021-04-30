@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Domain;
+namespace NiuGengYun\EasyTBK\taobao\domain;
 
 /**
  * 地址区域结构

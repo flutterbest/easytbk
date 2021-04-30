@@ -6,10 +6,10 @@
  * @date   2016-1-27
  */
 
-namespace NiuGengYun\EasyTBK\SuNing\Request\Union;
+namespace NiuGengYun\EasyTBK\suning\request\union;
 
-use NiuGengYun\EasyTBK\SuNing\SuningRequest;
-use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
+use NiuGengYun\EasyTBK\suning\SuningRequest;
+use NiuGengYun\EasyTBK\suning\RequestCheckUtil;
 
 class UnionInfomationGetRequest extends SuningRequest
 {

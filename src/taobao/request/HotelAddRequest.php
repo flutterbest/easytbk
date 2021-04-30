@@ -1,8 +1,8 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace NiuGengYun\EasyTBK\taobao\request;
 
-use NiuGengYun\EasyTBK\TaoBao\RequestCheckUtil;
+use NiuGengYun\EasyTBK\taobao\RequestCheckUtil;
 
 /**
  * TOP API: taobao.hotel.add request

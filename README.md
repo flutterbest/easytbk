@@ -36,7 +36,7 @@ php artisan vendor:publish --provider "NiuGengYun\EasyTBK\ServiceProvider"
 ```php
 <?php
 use NiuGengYun\EasyTBK\Factory;
-use NiuGengYun\EasyTBK\TaoBao\Request\TbkItemInfoGetRequest;
+use NiuGengYun\EasyTBK\taobao\Request\TbkItemInfoGetRequest;
 
 $client = Factory::taobao ();
 $req = new TbkItemInfoGetRequest;
@@ -45,10 +45,11 @@ return $client->execute ($req);
 ```
 
 2、京东SDK初始化
+
 ```php
 <?php
 use NiuGengYun\EasyTBK\Factory;
-use NiuGengYun\EasyTBK\JingDong\Request\JdUnionGoodsPromotiongoodsinfoQueryRequest;
+use NiuGengYun\EasyTBK\jingdong\request\JdUnionGoodsPromotiongoodsinfoQueryRequest;
 
 $jd = Factory::jingdong();
 $req = new JdUnionGoodsPromotiongoodsinfoQueryRequest();
@@ -57,10 +58,11 @@ return $jd->execute($req);
 ```
 
 3、拼多多SDK初始化
+
 ```php
 <?php
 use NiuGengYun\EasyTBK\Factory;
-use NiuGengYun\EasyTBK\PinDuoDuo\Request\DdkGoodsDetailRequest;
+use NiuGengYun\EasyTBK\pinduoduo\request\DdkGoodsDetailRequest;
 
 $pdd = Factory::pinduoduo();
 $req = new DdkGoodsDetailRequest();
@@ -87,10 +89,11 @@ dd($service->genPidWithOauth($pidGenRequest1));
 ```
 
 5、苏宁连联盟SDK初始化
+
 ```php
 <?php
 use NiuGengYun\EasyTBK\Factory;
-use NiuGengYun\EasyTBK\SuNing\Request\Netalliance\CouponproductQueryRequest;
+use NiuGengYun\EasyTBK\suning\Request\netalliance\CouponproductQueryRequest;
 
 $c = Factory::suning();
 $req = new CouponproductQueryRequest();

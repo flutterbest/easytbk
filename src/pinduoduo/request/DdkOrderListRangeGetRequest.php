@@ -6,9 +6,9 @@
  * Time: 12:12
  */
 
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
+namespace NiuGengYun\EasyTBK\pinduoduo\request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+use NiuGengYun\EasyTBK\pinduoduo\RequestInterface;
 
 
 class DdkOrderListRangeGetRequest implements RequestInterface

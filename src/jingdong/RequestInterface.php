@@ -6,7 +6,7 @@
  * Time: 15:54
  */
 
-namespace NiuGengYun\EasyTBK\JingDong;
+namespace NiuGengYun\EasyTBK\jingdong;
 
 
 interface RequestInterface

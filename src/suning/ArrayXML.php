@@ -1,5 +1,5 @@
 <?php
-namespace NiuGengYun\EasyTBK\SuNing;
+namespace NiuGengYun\EasyTBK\suning;
 
 class ArrayXML {
 	/**

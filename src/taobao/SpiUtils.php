@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao;
+namespace NiuGengYun\EasyTBK\taobao;
 
 class SpiUtils{
 	private static $top_sign_list = "HTTP_TOP_SIGN_LIST";
