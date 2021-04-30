@@ -4,7 +4,7 @@
    Manual: http://scripts.incutio.com/httpclient/
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Http;
+namespace NiuGengYun\EasyTBK\vip\Osp\Http;
 
 class HttpClient {
     // Request vars
@@ -114,7 +114,7 @@ class HttpClient {
 					$this->errormsg = 'Connection failed ('.$errno.')';
 			    $this->errormsg .= ' '.$errstr;
 			    $this->debug($this->errormsg);
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException($this->errormsg);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException($this->errormsg);
 			}
 			return false;
         }
@@ -138,7 +138,7 @@ class HttpClient {
     	        if (!preg_match('/HTTP\/(\\d\\.\\d)\\s*(\\d+)\\s*(.*)/', $line, $m)) {
     	            $this->errormsg = "Status code line invalid: ".htmlentities($line);
     	            $this->debug($this->errormsg);
-					throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException($this->errormsg);
+					throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException($this->errormsg);
     	            return false;
     	        }
     	        $http_version = $m[1]; // not used
@@ -147,7 +147,7 @@ class HttpClient {
 				if( "200" != $this->status ){
 					$this->errormsg = "Response status code invalid: " . $this->status . " " . $status_string;
 					$this->debug($this->errormsg);
-					throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException($this->errormsg);
+					throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException($this->errormsg);
 				}
     	        $this->debug(trim($line));
     	        continue;

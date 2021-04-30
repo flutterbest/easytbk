@@ -8,7 +8,7 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace NiuGengYun\EasyTBK\vip\request;
 
 class QueryGoodsRequest {
 
@@ -268,7 +268,7 @@ class QueryGoodsRequest {
 
 			if($needSkip){
 
-                \NiuGengYun\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+                \NiuGengYun\EasyTBK\vip\Osp\Protocol\ProtocolUtil::skip($input);
 			}
 
 			$input->readFieldEnd();

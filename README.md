@@ -36,10 +36,10 @@ php artisan vendor:publish --provider "NiuGengYun\EasyTBK\ServiceProvider"
 ```php
 <?php
 use NiuGengYun\EasyTBK\Factory;
-use NiuGengYun\EasyTBK\taobao\Request\TbkItemInfoGetRequest;
+use NiuGengYun\EasyTBK\taobao\request\TbkItemInfoGetRequest;
 
 $client = Factory::taobao ();
-$req = new TbkItemInfoGetRequest;
+$req = new TbkItemInfoGetRequest();
 $req->setNumIids ($numIids);
 return $client->execute ($req);
 ```

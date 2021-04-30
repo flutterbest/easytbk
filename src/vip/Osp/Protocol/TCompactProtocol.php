@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Protocol;
+namespace NiuGengYun\EasyTBK\vip\Osp\Protocol;
 
 $base_path = dirname(__FILE__).'/../../';
 

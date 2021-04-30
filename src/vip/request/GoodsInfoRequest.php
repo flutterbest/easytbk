@@ -8,7 +8,7 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace NiuGengYun\EasyTBK\vip\request;
 
 class GoodsInfoRequest {
 

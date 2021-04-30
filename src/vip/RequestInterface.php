@@ -6,7 +6,7 @@
  * Time: 15:54
  */
 
-namespace NiuGengYun\EasyTBK\Vip;
+namespace NiuGengYun\EasyTBK\vip;
 
 
 interface RequestInterface

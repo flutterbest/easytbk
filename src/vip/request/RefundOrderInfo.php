@@ -8,7 +8,7 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace NiuGengYun\EasyTBK\vip\request;
 
 class RefundOrderInfo {
 
@@ -300,7 +300,7 @@ class RefundOrderInfo {
 
 						$elem0 = null;
 
-						$elem0 = new \NiuGengYun\EasyTBK\Vip\Request\RefundOrderDetail();
+						$elem0 = new \NiuGengYun\EasyTBK\vip\request\RefundOrderDetail();
 						$elem0->read($input);
 
 						$this->refundOrderDetails[$_size0++] = $elem0;
@@ -369,7 +369,7 @@ class RefundOrderInfo {
 
 			if($needSkip){
 
-                \NiuGengYun\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+                \NiuGengYun\EasyTBK\vip\Osp\Protocol\ProtocolUtil::skip($input);
 			}
 
 			$input->readFieldEnd();
@@ -473,7 +473,7 @@ class RefundOrderInfo {
 
 			if (!is_array($this->refundOrderDetails)){
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$output->writeListBegin();
@@ -482,7 +482,7 @@ class RefundOrderInfo {
 
 				if (!is_object($iter0)) {
 
-					throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+					throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException::INVALID_DATA);
 				}
 
 				$xfer += $iter0->write($output);

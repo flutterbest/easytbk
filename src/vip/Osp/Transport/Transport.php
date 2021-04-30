@@ -20,9 +20,9 @@
  * @package thrift.transport
  */
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Transport;
+namespace NiuGengYun\EasyTBK\vip\Osp\Transport;
 
-use NiuGengYun\EasyTBK\Vip\Osp\StringFunc\StringFuncFactory;
+use NiuGengYun\EasyTBK\vip\Osp\StringFunc\StringFuncFactory;
 
 /**
  * Base interface for a transport agent.

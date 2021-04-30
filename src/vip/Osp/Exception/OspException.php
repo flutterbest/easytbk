@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Exception;
+namespace NiuGengYun\EasyTBK\vip\Osp\Exception;
 
 /**
  * OSP异常信息封装类
@@ -30,7 +30,7 @@ class OspException extends \Exception {
 // 		$this->returnMessage = $returnMessage;
 // 	}
 
-	public function __construct($returnMessage, $returnCode=\NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::CALLEE_UNKNOWN_EXCEPTION) {
+	public function __construct($returnMessage, $returnCode=\NiuGengYun\EasyTBK\vip\Osp\Exception\OspException::CALLEE_UNKNOWN_EXCEPTION) {
 		$this->returnCode = $returnCode;
 		$this->returnMessage = $returnMessage;
 	}

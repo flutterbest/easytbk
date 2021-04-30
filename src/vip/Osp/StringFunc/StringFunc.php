@@ -19,7 +19,7 @@
  *
  */
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\StringFunc;
+namespace NiuGengYun\EasyTBK\vip\Osp\StringFunc;
 
 interface StringFunc {
     public function substr($str, $start, $length = null);

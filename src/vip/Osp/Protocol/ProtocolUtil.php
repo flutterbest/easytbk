@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Protocol;
+namespace NiuGengYun\EasyTBK\vip\Osp\Protocol;
 
 class ProtocolUtil {
 	static $NUMBER = 1;
@@ -44,7 +44,7 @@ class ProtocolUtil {
 				$prot->readBool ( $temp );
 				break;
 			default :
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException ( "unknow Type" );
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException ( "unknow Type" );
 		}
 	}
 }
