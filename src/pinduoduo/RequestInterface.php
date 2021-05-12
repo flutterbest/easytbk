@@ -6,7 +6,7 @@
  * Time: 15:43
  */
 
-namespace NiuGengYun\EasyTBK\PinDuoDuo;
+namespace NiuGengYun\EasyTBK\pinduoduo;
 
 
 interface RequestInterface

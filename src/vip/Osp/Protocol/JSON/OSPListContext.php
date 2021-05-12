@@ -20,10 +20,10 @@
  * @package thrift.protocol
  */
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSON;
+namespace NiuGengYun\EasyTBK\vip\Osp\Protocol\JSON;
 
-use NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSON\BaseContext;
-use NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSONProtocol;
+use NiuGengYun\EasyTBK\vip\Osp\Protocol\JSON\BaseContext;
+use NiuGengYun\EasyTBK\vip\Osp\Protocol\JSONProtocol;
 
 class OSPListContext extends BaseContext
 {

@@ -8,7 +8,7 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace NiuGengYun\EasyTBK\vip\request;
 
 class GoodsInfo {
 
@@ -699,7 +699,7 @@ class GoodsInfo {
 
 				$needSkip = false;
 
-				$this->storeInfo = new \NiuGengYun\EasyTBK\Vip\Request\StoreInfo();
+				$this->storeInfo = new \NiuGengYun\EasyTBK\vip\request\StoreInfo();
 				$this->storeInfo->read($input);
 
 			}
@@ -711,7 +711,7 @@ class GoodsInfo {
 
 				$needSkip = false;
 
-				$this->commentsInfo = new \NiuGengYun\EasyTBK\Vip\Request\GoodsCommentsInfo();
+				$this->commentsInfo = new \NiuGengYun\EasyTBK\vip\request\GoodsCommentsInfo();
 				$this->commentsInfo->read($input);
 
 			}
@@ -723,7 +723,7 @@ class GoodsInfo {
 
 				$needSkip = false;
 
-				$this->storeServiceCapability = new \NiuGengYun\EasyTBK\Vip\Request\StoreServiceCapability();
+				$this->storeServiceCapability = new \NiuGengYun\EasyTBK\vip\request\StoreServiceCapability();
 				$this->storeServiceCapability->read($input);
 
 			}
@@ -772,7 +772,7 @@ class GoodsInfo {
 
 			if($needSkip){
 
-				\NiuGengYun\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+				\NiuGengYun\EasyTBK\vip\Osp\Protocol\ProtocolUtil::skip($input);
 			}
 
 			$input->readFieldEnd();
@@ -840,7 +840,7 @@ class GoodsInfo {
 
 			if (!is_array($this->goodsCarouselPictures)){
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$output->writeListBegin();
@@ -943,7 +943,7 @@ class GoodsInfo {
 
 			if (!is_array($this->goodsDetailPictures)){
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$output->writeListBegin();
@@ -1064,7 +1064,7 @@ class GoodsInfo {
 
 			if (!is_object($this->storeInfo)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->storeInfo->write($output);
@@ -1079,7 +1079,7 @@ class GoodsInfo {
 
 			if (!is_object($this->commentsInfo)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->commentsInfo->write($output);
@@ -1094,7 +1094,7 @@ class GoodsInfo {
 
 			if (!is_object($this->storeServiceCapability)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->storeServiceCapability->write($output);

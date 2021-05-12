@@ -8,23 +8,23 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace NiuGengYun\EasyTBK\vip\request;
 interface UnionPidServiceIf{
 
 
-	public function genPid(\NiuGengYun\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest);
+	public function genPid(\NiuGengYun\EasyTBK\vip\request\PidGenRequest $pidGenRequest);
 
-	public function genPidWithOauth(\NiuGengYun\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest);
+	public function genPidWithOauth(\NiuGengYun\EasyTBK\vip\request\PidGenRequest $pidGenRequest);
 
 	public function healthCheck();
 
-	public function queryPid(\NiuGengYun\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest);
+	public function queryPid(\NiuGengYun\EasyTBK\vip\request\PidQueryRequest $pidQueryRequest);
 
-	public function queryPidWithOauth(\NiuGengYun\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest);
+	public function queryPidWithOauth(\NiuGengYun\EasyTBK\vip\request\PidQueryRequest $pidQueryRequest);
 
 }
 
-class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub implements \NiuGengYun\EasyTBK\Vip\Request\UnionPidServiceIf{
+class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\vip\Osp\Base\OspStub implements \NiuGengYun\EasyTBK\vip\request\UnionPidServiceIf{
 
 	public function __construct(){
 
@@ -32,16 +32,16 @@ class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	}
 
 
-	public function genPid(\NiuGengYun\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest){
+	public function genPid(\NiuGengYun\EasyTBK\vip\request\PidGenRequest $pidGenRequest){
 
 		$this->send_genPid( $pidGenRequest);
 		return $this->recv_genPid();
 	}
 
-	public function send_genPid(\NiuGengYun\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest){
+	public function send_genPid(\NiuGengYun\EasyTBK\vip\request\PidGenRequest $pidGenRequest){
 
 		$this->initInvocation("genPid");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_genPid_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_genPid_args();
 
 		$args->pidGenRequest = $pidGenRequest;
 
@@ -50,7 +50,7 @@ class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_genPid(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_genPid_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_genPid_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -60,16 +60,16 @@ class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	}
 
 
-	public function genPidWithOauth(\NiuGengYun\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest){
+	public function genPidWithOauth(\NiuGengYun\EasyTBK\vip\request\PidGenRequest $pidGenRequest){
 
 		$this->send_genPidWithOauth( $pidGenRequest);
 		return $this->recv_genPidWithOauth();
 	}
 
-	public function send_genPidWithOauth(\NiuGengYun\EasyTBK\Vip\Request\PidGenRequest $pidGenRequest){
+	public function send_genPidWithOauth(\NiuGengYun\EasyTBK\vip\request\PidGenRequest $pidGenRequest){
 
 		$this->initInvocation("genPidWithOauth");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_genPidWithOauth_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_genPidWithOauth_args();
 
 		$args->pidGenRequest = $pidGenRequest;
 		$this->send_base($args);
@@ -77,7 +77,7 @@ class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_genPidWithOauth(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_genPidWithOauth_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_genPidWithOauth_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -96,14 +96,14 @@ class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	public function send_healthCheck(){
 
 		$this->initInvocation("healthCheck");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_healthCheck_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_healthCheck_args();
 
 		$this->send_base($args);
 	}
 
 	public function recv_healthCheck(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_healthCheck_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_healthCheck_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -113,16 +113,16 @@ class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	}
 
 
-	public function queryPid(\NiuGengYun\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest){
+	public function queryPid(\NiuGengYun\EasyTBK\vip\request\PidQueryRequest $pidQueryRequest){
 
 		$this->send_queryPid( $pidQueryRequest);
 		return $this->recv_queryPid();
 	}
 
-	public function send_queryPid(\NiuGengYun\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest){
+	public function send_queryPid(\NiuGengYun\EasyTBK\vip\request\PidQueryRequest $pidQueryRequest){
 
 		$this->initInvocation("queryPid");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_queryPid_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_queryPid_args();
 
 		$args->pidQueryRequest = $pidQueryRequest;
 
@@ -131,7 +131,7 @@ class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_queryPid(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_queryPid_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_queryPid_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -141,16 +141,16 @@ class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	}
 
 
-	public function queryPidWithOauth(\NiuGengYun\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest){
+	public function queryPidWithOauth(\NiuGengYun\EasyTBK\vip\request\PidQueryRequest $pidQueryRequest){
 
 		$this->send_queryPidWithOauth( $pidQueryRequest);
 		return $this->recv_queryPidWithOauth();
 	}
 
-	public function send_queryPidWithOauth(\NiuGengYun\EasyTBK\Vip\Request\PidQueryRequest $pidQueryRequest){
+	public function send_queryPidWithOauth(\NiuGengYun\EasyTBK\vip\request\PidQueryRequest $pidQueryRequest){
 
 		$this->initInvocation("queryPidWithOauth");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_queryPidWithOauth_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_queryPidWithOauth_args();
 
 		$args->pidQueryRequest = $pidQueryRequest;
 
@@ -159,7 +159,7 @@ class _UnionPidServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_queryPidWithOauth(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionPidService_queryPidWithOauth_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionPidService_queryPidWithOauth_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -214,7 +214,7 @@ class UnionPidService_genPid_args {
 		if(true) {
 
 
-			$this->pidGenRequest = new \NiuGengYun\EasyTBK\Vip\Request\PidGenRequest();
+			$this->pidGenRequest = new \NiuGengYun\EasyTBK\vip\request\PidGenRequest();
 			$this->pidGenRequest->read($input);
 
 		}
@@ -237,7 +237,7 @@ class UnionPidService_genPid_args {
 
 			if (!is_object($this->pidGenRequest)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->pidGenRequest->write($output);
@@ -296,7 +296,7 @@ class UnionPidService_genPidWithOauth_args {
 		if(true) {
 
 
-			$this->pidGenRequest = new \NiuGengYun\EasyTBK\Vip\Request\PidGenRequest();
+			$this->pidGenRequest = new \NiuGengYun\EasyTBK\vip\request\PidGenRequest();
 			$this->pidGenRequest->read($input);
 
 		}
@@ -319,7 +319,7 @@ class UnionPidService_genPidWithOauth_args {
 
 			if (!is_object($this->pidGenRequest)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->pidGenRequest->write($output);
@@ -424,7 +424,7 @@ class UnionPidService_queryPid_args {
 		if(true) {
 
 
-			$this->pidQueryRequest = new \NiuGengYun\EasyTBK\Vip\Request\PidQueryRequest();
+			$this->pidQueryRequest = new \NiuGengYun\EasyTBK\vip\request\PidQueryRequest();
 			$this->pidQueryRequest->read($input);
 
 		}
@@ -447,7 +447,7 @@ class UnionPidService_queryPid_args {
 
 			if (!is_object($this->pidQueryRequest)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->pidQueryRequest->write($output);
@@ -506,7 +506,7 @@ class UnionPidService_queryPidWithOauth_args {
 		if(true) {
 
 
-			$this->pidQueryRequest = new \NiuGengYun\EasyTBK\Vip\Request\PidQueryRequest();
+			$this->pidQueryRequest = new \NiuGengYun\EasyTBK\vip\request\PidQueryRequest();
 			$this->pidQueryRequest->read($input);
 
 		}
@@ -529,7 +529,7 @@ class UnionPidService_queryPidWithOauth_args {
 
 			if (!is_object($this->pidQueryRequest)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->pidQueryRequest->write($output);
@@ -588,7 +588,7 @@ class UnionPidService_genPid_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\CpsUnionPidGenResponse();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\CpsUnionPidGenResponse();
 			$this->success->read($input);
 
 		}
@@ -611,7 +611,7 @@ class UnionPidService_genPid_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -670,7 +670,7 @@ class UnionPidService_genPidWithOauth_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\CpsUnionPidGenResponse();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\CpsUnionPidGenResponse();
 			$this->success->read($input);
 
 		}
@@ -693,7 +693,7 @@ class UnionPidService_genPidWithOauth_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -775,7 +775,7 @@ class UnionPidService_healthCheck_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -834,7 +834,7 @@ class UnionPidService_queryPid_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\CpsUnionPidQueryResponse();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\CpsUnionPidQueryResponse();
 			$this->success->read($input);
 
 		}
@@ -857,7 +857,7 @@ class UnionPidService_queryPid_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -916,7 +916,7 @@ class UnionPidService_queryPidWithOauth_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\CpsUnionPidQueryResponse();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\CpsUnionPidQueryResponse();
 			$this->success->read($input);
 
 		}
@@ -939,7 +939,7 @@ class UnionPidService_queryPidWithOauth_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);

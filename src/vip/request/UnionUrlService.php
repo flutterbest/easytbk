@@ -8,7 +8,7 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace NiuGengYun\EasyTBK\vip\request;
 interface UnionUrlServiceIf{
 
 
@@ -22,13 +22,13 @@ interface UnionUrlServiceIf{
 
 	public function healthCheck();
 
-	public function vipLinkCheck(\NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq);
+	public function vipLinkCheck(\NiuGengYun\EasyTBK\vip\request\VipLinkCheckReq $vipLinkCheckReq);
 
-	public function vipLinkCheckWithOuth(\NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq);
+	public function vipLinkCheckWithOuth(\NiuGengYun\EasyTBK\vip\request\VipLinkCheckReq $vipLinkCheckReq);
 
 }
 
-class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub implements \NiuGengYun\EasyTBK\Vip\Request\UnionUrlServiceIf{
+class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\vip\Osp\Base\OspStub implements \NiuGengYun\EasyTBK\vip\request\UnionUrlServiceIf{
 
 	public function __construct(){
 
@@ -45,7 +45,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	public function send_genByGoodsId( $goodsIdList, $chanTag, $requestId){
 
 		$this->initInvocation("genByGoodsId");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_genByGoodsId_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_genByGoodsId_args();
 
 		$args->goodsIdList = $goodsIdList;
 
@@ -58,7 +58,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_genByGoodsId(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_genByGoodsId_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_genByGoodsId_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -77,7 +77,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	public function send_genByGoodsIdWithOauth( $goodsIdList, $chanTag, $requestId, $statParam){
 
 		$this->initInvocation("genByGoodsIdWithOauth");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_genByGoodsIdWithOauth_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_genByGoodsIdWithOauth_args();
 
 		$args->goodsIdList = $goodsIdList;
 
@@ -92,7 +92,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_genByGoodsIdWithOauth(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_genByGoodsIdWithOauth_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_genByGoodsIdWithOauth_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -111,7 +111,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	public function send_genByVIPUrl( $urlList, $chanTag, $requestId){
 
 		$this->initInvocation("genByVIPUrl");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrl_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_genByVIPUrl_args();
 
 		$args->urlList = $urlList;
 
@@ -124,7 +124,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_genByVIPUrl(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrl_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_genByVIPUrl_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -143,7 +143,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	public function send_genByVIPUrlWithOauth( $urlList, $chanTag, $requestId){
 
 		$this->initInvocation("genByVIPUrlWithOauth");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrlWithOauth_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_genByVIPUrlWithOauth_args();
 
 		$args->urlList = $urlList;
 
@@ -156,7 +156,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_genByVIPUrlWithOauth(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_genByVIPUrlWithOauth_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_genByVIPUrlWithOauth_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -175,14 +175,14 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	public function send_healthCheck(){
 
 		$this->initInvocation("healthCheck");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_healthCheck_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_healthCheck_args();
 
 		$this->send_base($args);
 	}
 
 	public function recv_healthCheck(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_healthCheck_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_healthCheck_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -192,16 +192,16 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	}
 
 
-	public function vipLinkCheck(\NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq){
+	public function vipLinkCheck(\NiuGengYun\EasyTBK\vip\request\VipLinkCheckReq $vipLinkCheckReq){
 
 		$this->send_vipLinkCheck( $vipLinkCheckReq);
 		return $this->recv_vipLinkCheck();
 	}
 
-	public function send_vipLinkCheck(\NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq){
+	public function send_vipLinkCheck(\NiuGengYun\EasyTBK\vip\request\VipLinkCheckReq $vipLinkCheckReq){
 
 		$this->initInvocation("vipLinkCheck");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheck_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_vipLinkCheck_args();
 
 		$args->vipLinkCheckReq = $vipLinkCheckReq;
 
@@ -210,7 +210,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_vipLinkCheck(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheck_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_vipLinkCheck_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -220,16 +220,16 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 	}
 
 
-	public function vipLinkCheckWithOuth(\NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq){
+	public function vipLinkCheckWithOuth(\NiuGengYun\EasyTBK\vip\request\VipLinkCheckReq $vipLinkCheckReq){
 
 		$this->send_vipLinkCheckWithOuth( $vipLinkCheckReq);
 		return $this->recv_vipLinkCheckWithOuth();
 	}
 
-	public function send_vipLinkCheckWithOuth(\NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckReq $vipLinkCheckReq){
+	public function send_vipLinkCheckWithOuth(\NiuGengYun\EasyTBK\vip\request\VipLinkCheckReq $vipLinkCheckReq){
 
 		$this->initInvocation("vipLinkCheckWithOuth");
-		$args = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheckWithOuth_args();
+		$args = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_vipLinkCheckWithOuth_args();
 
 		$args->vipLinkCheckReq = $vipLinkCheckReq;
 
@@ -238,7 +238,7 @@ class _UnionUrlServiceClient extends \NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub im
 
 	public function recv_vipLinkCheckWithOuth(){
 
-		$result = new \NiuGengYun\EasyTBK\Vip\Request\UnionUrlService_vipLinkCheckWithOuth_result();
+		$result = new \NiuGengYun\EasyTBK\vip\request\UnionUrlService_vipLinkCheckWithOuth_result();
 		$this->receive_base($result);
 		if ($result->success !== null){
 
@@ -369,7 +369,7 @@ class UnionUrlService_genByGoodsId_args {
 
 		if (!is_array($this->goodsIdList)){
 
-			throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+			throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 		}
 
 		$output->writeListBegin();
@@ -523,7 +523,7 @@ class UnionUrlService_genByGoodsIdWithOauth_args {
 
 		if (!is_array($this->goodsIdList)){
 
-			throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+			throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 		}
 
 		$output->writeListBegin();
@@ -677,7 +677,7 @@ class UnionUrlService_genByVIPUrl_args {
 
 		if (!is_array($this->urlList)){
 
-			throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+			throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 		}
 
 		$output->writeListBegin();
@@ -831,7 +831,7 @@ class UnionUrlService_genByVIPUrlWithOauth_args {
 
 		if (!is_array($this->urlList)){
 
-			throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+			throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 		}
 
 		$output->writeListBegin();
@@ -955,7 +955,7 @@ class UnionUrlService_vipLinkCheck_args {
 		if(true) {
 
 
-			$this->vipLinkCheckReq = new \NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckReq();
+			$this->vipLinkCheckReq = new \NiuGengYun\EasyTBK\vip\request\VipLinkCheckReq();
 			$this->vipLinkCheckReq->read($input);
 
 		}
@@ -976,7 +976,7 @@ class UnionUrlService_vipLinkCheck_args {
 
 		if (!is_object($this->vipLinkCheckReq)) {
 
-			throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+			throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 		}
 
 		$xfer += $this->vipLinkCheckReq->write($output);
@@ -1033,7 +1033,7 @@ class UnionUrlService_vipLinkCheckWithOuth_args {
 		if(true) {
 
 
-			$this->vipLinkCheckReq = new \NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckReq();
+			$this->vipLinkCheckReq = new \NiuGengYun\EasyTBK\vip\request\VipLinkCheckReq();
 			$this->vipLinkCheckReq->read($input);
 
 		}
@@ -1054,7 +1054,7 @@ class UnionUrlService_vipLinkCheckWithOuth_args {
 
 		if (!is_object($this->vipLinkCheckReq)) {
 
-			throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+			throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 		}
 
 		$xfer += $this->vipLinkCheckReq->write($output);
@@ -1111,7 +1111,7 @@ class UnionUrlService_genByGoodsId_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\UrlGenResponse();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\UrlGenResponse();
 			$this->success->read($input);
 
 		}
@@ -1134,7 +1134,7 @@ class UnionUrlService_genByGoodsId_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -1193,7 +1193,7 @@ class UnionUrlService_genByGoodsIdWithOauth_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\UrlGenResponse();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\UrlGenResponse();
 			$this->success->read($input);
 
 		}
@@ -1216,7 +1216,7 @@ class UnionUrlService_genByGoodsIdWithOauth_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -1275,7 +1275,7 @@ class UnionUrlService_genByVIPUrl_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\UrlGenResponse();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\UrlGenResponse();
 			$this->success->read($input);
 
 		}
@@ -1298,7 +1298,7 @@ class UnionUrlService_genByVIPUrl_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -1357,7 +1357,7 @@ class UnionUrlService_genByVIPUrlWithOauth_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\UrlGenResponse();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\UrlGenResponse();
 			$this->success->read($input);
 
 		}
@@ -1380,7 +1380,7 @@ class UnionUrlService_genByVIPUrlWithOauth_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -1462,7 +1462,7 @@ class UnionUrlService_healthCheck_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -1521,7 +1521,7 @@ class UnionUrlService_vipLinkCheck_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckResp();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\VipLinkCheckResp();
 			$this->success->read($input);
 
 		}
@@ -1544,7 +1544,7 @@ class UnionUrlService_vipLinkCheck_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);
@@ -1603,7 +1603,7 @@ class UnionUrlService_vipLinkCheckWithOuth_result {
 		if(true) {
 
 
-			$this->success = new \NiuGengYun\EasyTBK\Vip\Request\VipLinkCheckResp();
+			$this->success = new \NiuGengYun\EasyTBK\vip\request\VipLinkCheckResp();
 			$this->success->read($input);
 
 		}
@@ -1626,7 +1626,7 @@ class UnionUrlService_vipLinkCheckWithOuth_result {
 
 			if (!is_object($this->success)) {
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$xfer += $this->success->write($output);

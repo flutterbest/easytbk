@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Domain;
+namespace NiuGengYun\EasyTBK\taobao\domain;
 
 /**
  * 请求列表，内部包含多个url

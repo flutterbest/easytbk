@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Domain;
+namespace NiuGengYun\EasyTBK\taobao\domain;
 
 /**
  * 被设置昵称的群成员

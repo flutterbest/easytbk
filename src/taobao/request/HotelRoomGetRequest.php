@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao\Request;
+namespace NiuGengYun\EasyTBK\taobao\request;
 
 /**
  * TOP API: taobao.hotel.room.get request

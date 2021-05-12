@@ -5,9 +5,9 @@
  * Date: 2018/11/20
  * Time: 下午6:45
  */
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
+namespace NiuGengYun\EasyTBK\pinduoduo\request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+use NiuGengYun\EasyTBK\pinduoduo\RequestInterface;
 
 
 class DdkRpPromUrlGenerateRequest  implements RequestInterface

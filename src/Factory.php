@@ -2,11 +2,11 @@
 
 namespace NiuGengYun\EasyTBK;
 
-use NiuGengYun\EasyTBK\TaoBao\Application as TaoBao;
-use NiuGengYun\EasyTBK\PinDuoDuo\Application as PinDuoDuo;
-use NiuGengYun\EasyTBK\JingDong\Application as JingDong;
+use NiuGengYun\EasyTBK\taobao\Application as TaoBao;
+use NiuGengYun\EasyTBK\pinduoduo\Application as PinDuoDuo;
+use NiuGengYun\EasyTBK\jingdong\Application as JingDong;
 use NiuGengYun\EasyTBK\Vip\Application as Vip;
-use NiuGengYun\EasyTBK\SuNing\Application as SuNing;
+use NiuGengYun\EasyTBK\suning\Application as SuNing;
 use NiuGengYun\EasyTBK\Vip\Osp\Context\InvocationContext;
 
 /**

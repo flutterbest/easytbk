@@ -5,9 +5,9 @@
  * Date: 2018/11/19
  * Time: 下午3:03
  */
-namespace NiuGengYun\EasyTBK\PinDuoDuo\Request;
+namespace NiuGengYun\EasyTBK\pinduoduo\request;
 
-use NiuGengYun\EasyTBK\PinDuoDuo\RequestInterface;
+use NiuGengYun\EasyTBK\pinduoduo\RequestInterface;
 
 
 class DdkWeappQrcodeUrlGenRequest implements RequestInterface

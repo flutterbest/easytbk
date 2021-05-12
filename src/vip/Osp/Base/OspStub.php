@@ -1,12 +1,12 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Base;
+namespace NiuGengYun\EasyTBK\vip\Osp\Base;
 
 //use Thrift\Transport\TFramedTransport;
 //use Thrift\Type\TMessageType;
 //use Thrift\Transport\TSocket;
 //use Thrift\Transport\TBufferedTransport;
-use NiuGengYun\EasyTBK\Vip\Osp\Context\InvocationContextFactory;
+use NiuGengYun\EasyTBK\vip\Osp\Context\InvocationContextFactory;
 
 class OspStub
 {
@@ -29,7 +29,7 @@ class OspStub
      */
     public function initInvocation($method)
     {
-        \NiuGengYun\EasyTBK\Vip\Osp\Log\Logger::info("[OspStub][InitInvocation][Service-Version-Method][" . $this->serviceName . "-" . $this->version . "-" . $method . "]");
+        \NiuGengYun\EasyTBK\vip\Osp\Log\Logger::info("[OspStub][InitInvocation][Service-Version-Method][" . $this->serviceName . "-" . $this->version . "-" . $method . "]");
 
         $ctx = InvocationContextFactory::getInstance();
         $ctx->reset();
@@ -69,7 +69,7 @@ class OspStub
         $sign .= "version" . $version;
         $sign .= $request;
 
-        return \NiuGengYun\EasyTBK\Vip\Osp\Util\HmacUtil::hmac($sign, $appSecret);
+        return \NiuGengYun\EasyTBK\vip\Osp\Util\HmacUtil::hmac($sign, $appSecret);
     }
 
     /**
@@ -104,7 +104,7 @@ class OspStub
      */
     public function getCallURLInfo($restAddr)
     {
-        if (!$restAddr) throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException("The openapi appURL is null, please set the appURL value");
+        if (!$restAddr) throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException("The openapi appURL is null, please set the appURL value");
         $url = parse_url($restAddr);
         //无指定协议，默认为http协议
         if (empty($url["scheme"])) {
@@ -125,7 +125,7 @@ class OspStub
     public function send_base($args)
     {
         $ctx = InvocationContextFactory::getInstance();
-        $oprot = new \NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSONProtocol(new \NiuGengYun\EasyTBK\Vip\Osp\Buffer\MemoryBuffer());
+        $oprot = new \NiuGengYun\EasyTBK\vip\Osp\Protocol\JSONProtocol(new \NiuGengYun\EasyTBK\vip\Osp\Buffer\MemoryBuffer());
         $args->write($oprot);
 
         $requestBuffer = $oprot->getTransport()->getBuffer();
@@ -134,21 +134,21 @@ class OspStub
         $scheme = isset($url["scheme"]) ? $url["scheme"] : null;
         $host = isset($url["host"]) ? $url["host"] : null;
         $port = isset($url["port"]) ? $url["port"] : null;
-        $client = new \NiuGengYun\EasyTBK\Vip\Osp\Http\HttpClient($scheme, $host, $port);
+        $client = new \NiuGengYun\EasyTBK\vip\Osp\Http\HttpClient($scheme, $host, $port);
         $request = array();
 
         $appKey = $ctx->getAppKey();
-        if ($appKey == null) throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException("The openapi appKey is null, please set the appKey value");
+        if ($appKey == null) throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException("The openapi appKey is null, please set the appKey value");
 
         $appSecret = $ctx->getAppSecret();
-        if ($appSecret == null) throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException("The openapi appSecret is null, please set the appSecret value");
+        if ($appSecret == null) throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException("The openapi appSecret is null, please set the appSecret value");
 
         $accessToken = $ctx->getAccessToken();
         $language = $ctx->getLanguage();
         $format = "JSON";
         $method = $ctx->getMethod();
         $service = $ctx->getServiceName();
-        $timestamp = round(\NiuGengYun\EasyTBK\Vip\Osp\Util\TimeUtil::currentTimeMillis() / 1000);
+        $timestamp = round(\NiuGengYun\EasyTBK\vip\Osp\Util\TimeUtil::currentTimeMillis() / 1000);
         $version = $ctx->getCallerVersion();
         $sign = $this->createRequestSign($accessToken, $appKey, $format, $language, $method, $service, $timestamp, $version, $requestBuffer, $appSecret);
         $ctx->setSign($sign);
@@ -170,7 +170,7 @@ class OspStub
         try {
             $result = $client->post($url["path"] . '?' . $this->getQueryString($request), $requestBuffer);
         } catch (Exception $e) {
-            throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException(\Osp\Util\MessageUtil::getInvocationMsg($ctx, $e->getMessage()), $e);
+            throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException(\Osp\Util\MessageUtil::getInvocationMsg($ctx, $e->getMessage()), $e);
         }
 
 
@@ -190,8 +190,8 @@ class OspStub
         $ctx = InvocationContextFactory::getInstance();
 
         $response = $ctx->getResponse();
-        if (\NiuGengYun\EasyTBK\Vip\Osp\Base\OspStub::$RETURN_NULL != $response) {
-            $iprot = new \NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSONProtocol(new \NiuGengYun\EasyTBK\Vip\Osp\Buffer\MemoryBuffer());
+        if (\NiuGengYun\EasyTBK\vip\Osp\Base\OspStub::$RETURN_NULL != $response) {
+            $iprot = new \NiuGengYun\EasyTBK\vip\Osp\Protocol\JSONProtocol(new \NiuGengYun\EasyTBK\vip\Osp\Buffer\MemoryBuffer());
             $iprot->getTransport()->write($response);
 
             $iprot->readStructBegin();
@@ -205,7 +205,7 @@ class OspStub
                 $iprot->readFieldBegin();
                 $returnMessage = null;
                 $iprot->readString($returnMessage);
-                throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException($returnMessage, $returnCode);
+                throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException($returnMessage, $returnCode);
             }
 
             $iprot->readFieldEnd();

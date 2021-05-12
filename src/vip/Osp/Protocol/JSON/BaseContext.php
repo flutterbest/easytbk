@@ -20,7 +20,7 @@
  * @package thrift.protocol
  */
 
-namespace NiuGengYun\EasyTBK\Vip\Osp\Protocol\JSON;
+namespace NiuGengYun\EasyTBK\vip\Osp\Protocol\JSON;
 
 class BaseContext
 {

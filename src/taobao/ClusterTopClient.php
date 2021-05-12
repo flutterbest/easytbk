@@ -1,6 +1,6 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\TaoBao;
+namespace NiuGengYun\EasyTBK\taobao;
 
 class ClusterTopClient extends TopClient {
 

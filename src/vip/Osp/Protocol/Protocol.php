@@ -1,5 +1,5 @@
 <?php
-namespace NiuGengYun\EasyTBK\Vip\Osp\Protocol;
+namespace NiuGengYun\EasyTBK\vip\Osp\Protocol;
 
 abstract class Protocol {
 	public abstract function reset();

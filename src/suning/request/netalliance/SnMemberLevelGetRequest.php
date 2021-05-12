@@ -1,8 +1,8 @@
 <?php
-namespace NiuGengYun\EasyTBK\SuNing\Request\Netalliance;
+namespace NiuGengYun\EasyTBK\suning\request\netalliance;
 
-use NiuGengYun\EasyTBK\SuNing\SuningRequest;
-use NiuGengYun\EasyTBK\SuNing\RequestCheckUtil;
+use NiuGengYun\EasyTBK\suning\SuningRequest;
+use NiuGengYun\EasyTBK\suning\RequestCheckUtil;
 
 /**
  * 苏宁开放平台接口 - 查询苏宁会员等级

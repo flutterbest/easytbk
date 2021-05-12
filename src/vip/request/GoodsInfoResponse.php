@@ -8,7 +8,7 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace NiuGengYun\EasyTBK\vip\request;
 
 class GoodsInfoResponse {
 
@@ -110,7 +110,7 @@ class GoodsInfoResponse {
 
 						$elem0 = null;
 
-						$elem0 = new \NiuGengYun\EasyTBK\Vip\Request\GoodsInfo();
+						$elem0 = new \NiuGengYun\EasyTBK\vip\request\GoodsInfo();
 						$elem0->read($input);
 
 						$this->goodsInfoList[$_size0++] = $elem0;
@@ -151,7 +151,7 @@ class GoodsInfoResponse {
 
 						$elem1 = null;
 
-						$elem1 = new \NiuGengYun\EasyTBK\Vip\Request\SortField();
+						$elem1 = new \NiuGengYun\EasyTBK\vip\request\SortField();
 						$elem1->read($input);
 
 						$this->sortFields[$_size1++] = $elem1;
@@ -190,7 +190,7 @@ class GoodsInfoResponse {
 
 			if($needSkip){
 
-				\NiuGengYun\EasyTBK\Vip\Osp\Protocol\ProtocolUtil::skip($input);
+				\NiuGengYun\EasyTBK\vip\Osp\Protocol\ProtocolUtil::skip($input);
 			}
 
 			$input->readFieldEnd();
@@ -213,7 +213,7 @@ class GoodsInfoResponse {
 
 			if (!is_array($this->goodsInfoList)){
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$output->writeListBegin();
@@ -222,7 +222,7 @@ class GoodsInfoResponse {
 
 				if (!is_object($iter0)) {
 
-					throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+					throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException::INVALID_DATA);
 				}
 
 				$xfer += $iter0->write($output);
@@ -250,7 +250,7 @@ class GoodsInfoResponse {
 
 			if (!is_array($this->sortFields)){
 
-				throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+				throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException::INVALID_DATA);
 			}
 
 			$output->writeListBegin();
@@ -259,7 +259,7 @@ class GoodsInfoResponse {
 
 				if (!is_object($iter0)) {
 
-					throw new \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\Vip\Osp\Exception\OspException::INVALID_DATA);
+					throw new \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException('Bad type in structure.', \NiuGengYun\EasyTBK\vip\Osp\Exception\OspException::INVALID_DATA);
 				}
 
 				$xfer += $iter0->write($output);

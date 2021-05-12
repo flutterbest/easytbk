@@ -1,8 +1,8 @@
 <?php
 
-namespace NiuGengYun\EasyTBK\JingDong\Request;
+namespace NiuGengYun\EasyTBK\jingdong\request;
 
-use NiuGengYun\EasyTBK\JingDong\RequestInterface;
+use NiuGengYun\EasyTBK\jingdong\RequestInterface;
 
 /**
  * Class JdUnionOrderQueryRequest

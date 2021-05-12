@@ -8,7 +8,7 @@
 *
 */
 
-namespace NiuGengYun\EasyTBK\Vip\Request;
+namespace NiuGengYun\EasyTBK\vip\request;
 
 class VipLinkCheckVO {
 
@@ -91,7 +91,7 @@ class VipLinkCheckVO {
 
 				$needSkip = false;
 
-				$names = \NiuGengYun\EasyTBK\Vip\Request\VipLinkTypeEnum::$__names;
+				$names = \NiuGengYun\EasyTBK\vip\request\VipLinkTypeEnum::$__names;
 				$name = null;
 				$input->readString($name);
 				foreach ($names as $k => $v){
@@ -162,7 +162,7 @@ class VipLinkCheckVO {
 
 			$xfer += $output->writeFieldBegin('linkType');
 
-			$em = new \NiuGengYun\EasyTBK\Vip\Request\VipLinkTypeEnum;
+			$em = new \NiuGengYun\EasyTBK\vip\request\VipLinkTypeEnum;
 			$output->writeString($em::$__names[$this->linkType]);
 
 			$xfer += $output->writeFieldEnd();
