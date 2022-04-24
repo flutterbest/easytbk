@@ -8,7 +8,7 @@ class Application
 
 	public $secretKey;
 
-	public $gatewayUrl = "http://gw.api.taobao.com/router/rest";
+	public $gatewayUrl = "https://gw.api.taobao.com/router/rest";
 
 	public $format = "xml";
 
