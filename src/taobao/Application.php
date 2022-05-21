@@ -54,6 +54,10 @@ class Application
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_FAILONERROR, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);    // 强制使用 HTTP/1.0
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Expect:')); //头部要送出'Expect: '
+		curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 ); //强制使用IP
+
 		if ($this->readTimeout) {
 			curl_setopt($ch, CURLOPT_TIMEOUT, $this->readTimeout);
 		}
