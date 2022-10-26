@@ -30,6 +30,14 @@ class JdUnionCategoryGoodsGetRequest implements RequestInterface
      */
     private $grade;
 
+    public function setParentId($parentId){
+        $this->parentId = $parentId;
+    }
+
+    public function setGrade($grade){
+        $this->grade = $grade;
+    }
+
 
     /**
      * @return string
