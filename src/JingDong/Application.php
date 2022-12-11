@@ -14,7 +14,7 @@ class Application
 {
     private static $instance;
 
-    private $gatewayUrl = 'https://router.jd.com/api';
+    private $gatewayUrl = 'https://api.jd.com/routerjson';
 
     public $appKey;
 
@@ -89,7 +89,7 @@ class Application
             $params["access_token"] = $access_token;
         }
 
-        $params['param_json'] = $request->getParamJson ();;
+        $params['360buy_param_json'] = $request->getParamJson ();;
 
 
         $params['sign'] = $this->generateSign ($params);
